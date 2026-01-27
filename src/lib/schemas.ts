@@ -5,12 +5,18 @@ export const leadFormSchema = z.object({
   businessName: z.string().min(2, "Business name is required"),
   email: z.string().email("Please enter a valid email"),
   phone: z.string().min(10, "Please enter a valid phone number"),
-  monthlyVolume: z.enum(["<500", "500-2k", "2k-10k", "10k+"], {
-    required_error: "Please select your monthly transaction volume",
-  }),
-  currentProvider: z.enum(["PAI", "Cardtronics", "Other", "None"], {
-    required_error: "Please select your current provider",
-  }),
+  monthlyVolume: z.union([
+    z.literal("<500"),
+    z.literal("500-2k"),
+    z.literal("2k-10k"),
+    z.literal("10k+"),
+  ]),
+  currentProvider: z.union([
+    z.literal("PAI"),
+    z.literal("Cardtronics"),
+    z.literal("Other"),
+    z.literal("None"),
+  ]),
   equipmentInterest: z.boolean().optional(),
   honeypot: z.string().optional(),
 });
@@ -32,7 +38,12 @@ export const maintenanceFormSchema = z.object({
   location: z.string().min(5, "Full address is required"),
   atmModel: z.string().min(2, "ATM model is required"),
   issueDescription: z.string().min(10, "Please describe the issue"),
-  urgency: z.enum(["low", "medium", "high", "critical"]),
+  urgency: z.union([
+    z.literal("low"),
+    z.literal("medium"),
+    z.literal("high"),
+    z.literal("critical"),
+  ]),
   honeypot: z.string().optional(),
 });
 
