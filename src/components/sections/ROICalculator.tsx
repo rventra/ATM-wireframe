@@ -2,34 +2,31 @@
 
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Calculator, TrendingUp, DollarSign } from "lucide-react";
+import { Calculator, DollarSign } from "lucide-react";
 
 export default function ROICalculator() {
   const [monthlyTransactions, setMonthlyTransactions] = useState(2000);
   const [surchargeAmount, setSurchargeAmount] = useState(3.0);
+  const [retailRate, setRetailRate] = useState(0.50);
   const [results, setResults] = useState({
-    currentRevenue: 0,
-    potentialRevenue: 0,
-    monthlyUplift: 0,
-    annualUplift: 0,
+    currentFeesPaid: 0,
+    cashReadyFees: 0,
+    youKeep: 0,
   });
 
   useEffect(() => {
-    const retailFee = 0.5;
     const wholesaleFee = 0.2;
 
-    const currentRevenue = monthlyTransactions * (surchargeAmount - retailFee);
-    const potentialRevenue = monthlyTransactions * (surchargeAmount - wholesaleFee);
-    const monthlyUplift = potentialRevenue - currentRevenue;
-    const annualUplift = monthlyUplift * 12;
+    const currentFeesPaid = monthlyTransactions * retailRate;
+    const cashReadyFees = monthlyTransactions * wholesaleFee;
+    const youKeep = currentFeesPaid - cashReadyFees;
 
     setResults({
-      currentRevenue,
-      potentialRevenue,
-      monthlyUplift,
-      annualUplift,
+      currentFeesPaid,
+      cashReadyFees,
+      youKeep,
     });
-  }, [monthlyTransactions, surchargeAmount]);
+  }, [monthlyTransactions, retailRate]);
 
   const formatCurrency = (value: number) => {
     return new Intl.NumberFormat("en-US", {
@@ -45,24 +42,57 @@ export default function ROICalculator() {
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      className="bg-white rounded-2xl shadow-xl p-6 sm:p-8 lg:p-10"
+      className="bg-gray-900 rounded-2xl shadow-xl p-6 sm:p-8 lg:p-10"
     >
       <div className="flex items-center space-x-3 mb-8">
-        <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center">
-          <Calculator className="w-6 h-6 text-green-600" />
+        <div className="w-12 h-12 bg-green-500/20 rounded-xl flex items-center justify-center">
+          <Calculator className="w-6 h-6 text-green-400" />
         </div>
         <div>
-          <h3 className="text-xl font-bold text-gray-900">Revenue Calculator</h3>
-          <p className="text-sm text-gray-500">Estimate your monthly uplift with CashReady</p>
+          <h3 className="text-xl font-bold text-white">Revenue Calculator</h3>
+          <p className="text-sm text-gray-400">See what you keep with wholesale rates</p>
         </div>
       </div>
 
       <div className="space-y-6">
+        {/* Retail Rate Input */}
+        <div>
+          <label className="flex justify-between text-sm font-medium text-gray-300 mb-2">
+            <span>What do you currently pay per transaction?</span>
+            <span className="text-green-400 font-semibold">${retailRate.toFixed(2)}</span>
+          </label>
+          <div className="relative">
+            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">$</span>
+            <input
+              type="number"
+              min="0.10"
+              max="1.00"
+              step="0.05"
+              value={retailRate}
+              onChange={(e) => setRetailRate(Number(e.target.value))}
+              className="w-full h-10 pl-8 pr-4 bg-gray-800 border border-gray-700 rounded-lg text-white text-sm focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
+            />
+          </div>
+          <input
+            type="range"
+            min="0.10"
+            max="1.00"
+            step="0.05"
+            value={retailRate}
+            onChange={(e) => setRetailRate(Number(e.target.value))}
+            className="w-full h-2 bg-gray-700 rounded-lg appearance-none cursor-pointer accent-green-500 mt-3"
+          />
+          <div className="flex justify-between text-xs text-gray-500 mt-1">
+            <span>$0.10</span>
+            <span>$1.00</span>
+          </div>
+        </div>
+
         {/* Monthly Transactions Slider */}
         <div>
-          <label className="flex justify-between text-sm font-medium text-gray-700 mb-2">
+          <label className="flex justify-between text-sm font-medium text-gray-300 mb-2">
             <span>Monthly Transactions</span>
-            <span className="text-green-600 font-semibold">{monthlyTransactions.toLocaleString()}</span>
+            <span className="text-green-400 font-semibold">{monthlyTransactions.toLocaleString()}</span>
           </label>
           <input
             type="range"
@@ -71,7 +101,7 @@ export default function ROICalculator() {
             step="100"
             value={monthlyTransactions}
             onChange={(e) => setMonthlyTransactions(Number(e.target.value))}
-            className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-green-600"
+            className="w-full h-2 bg-gray-700 rounded-lg appearance-none cursor-pointer accent-green-500"
           />
           <div className="flex justify-between text-xs text-gray-500 mt-1">
             <span>100</span>
@@ -81,9 +111,9 @@ export default function ROICalculator() {
 
         {/* Surcharge Amount Slider */}
         <div>
-          <label className="flex justify-between text-sm font-medium text-gray-700 mb-2">
+          <label className="flex justify-between text-sm font-medium text-gray-300 mb-2">
             <span>Surcharge Amount</span>
-            <span className="text-green-600 font-semibold">${surchargeAmount.toFixed(2)}</span>
+            <span className="text-green-400 font-semibold">${surchargeAmount.toFixed(2)}</span>
           </label>
           <input
             type="range"
@@ -92,7 +122,7 @@ export default function ROICalculator() {
             step="0.25"
             value={surchargeAmount}
             onChange={(e) => setSurchargeAmount(Number(e.target.value))}
-            className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-green-600"
+            className="w-full h-2 bg-gray-700 rounded-lg appearance-none cursor-pointer accent-green-500"
           />
           <div className="flex justify-between text-xs text-gray-500 mt-1">
             <span>$1.50</span>
@@ -100,51 +130,54 @@ export default function ROICalculator() {
           </div>
         </div>
 
-        {/* Comparison Display */}
-        <div className="grid sm:grid-cols-2 gap-4 mt-8">
-          <div className="bg-red-50 rounded-xl p-4 border border-red-100">
-            <div className="flex items-center space-x-2 mb-2">
-              <div className="w-2 h-2 rounded-full bg-red-500" />
-              <span className="text-sm font-medium text-red-700">Retail Processing</span>
+        {/* Three Metric Output */}
+        <div className="space-y-4 mt-8">
+          {/* Current Fees Paid */}
+          <div className="bg-gray-800 rounded-xl p-4 border border-gray-700">
+            <div className="flex items-center justify-between">
+              <div>
+                <p className="text-sm text-gray-400">Current monthly fees paid:</p>
+                <p className="text-xl font-bold text-red-400">{formatCurrency(results.currentFeesPaid)}</p>
+              </div>
+              <div className="w-10 h-10 bg-red-500/20 rounded-lg flex items-center justify-center">
+                <DollarSign className="w-5 h-5 text-red-400" />
+              </div>
             </div>
-            <p className="text-2xl font-bold text-red-700">{formatCurrency(results.currentRevenue)}</p>
-            <p className="text-xs text-red-600 mt-1">per month after ~$0.50/tx fees</p>
           </div>
 
-          <div className="bg-green-50 rounded-xl p-4 border border-green-100">
-            <div className="flex items-center space-x-2 mb-2">
-              <div className="w-2 h-2 rounded-full bg-green-500" />
-              <span className="text-sm font-medium text-green-700">CashReady Wholesale</span>
+          {/* CashReady Fees */}
+          <div className="bg-gray-800 rounded-xl p-4 border border-gray-700">
+            <div className="flex items-center justify-between">
+              <div>
+                <p className="text-sm text-gray-400">With CashReady:</p>
+                <p className="text-xl font-bold text-green-400">{formatCurrency(results.cashReadyFees)}</p>
+              </div>
+              <div className="w-10 h-10 bg-green-500/20 rounded-lg flex items-center justify-center">
+                <DollarSign className="w-5 h-5 text-green-400" />
+              </div>
             </div>
-            <p className="text-2xl font-bold text-green-700">{formatCurrency(results.potentialRevenue)}</p>
-            <p className="text-xs text-green-600 mt-1">per month after $0.20/tx fees</p>
+            <p className="text-xs text-gray-500 mt-1">At $0.20 per transaction</p>
           </div>
+
+          {/* You Keep */}
+          <motion.div
+            initial={{ scale: 0.95 }}
+            animate={{ scale: 1 }}
+            key={results.youKeep}
+            className="bg-gradient-to-r from-green-600 to-green-700 rounded-xl p-6 text-white"
+          >
+            <div className="flex items-center justify-between">
+              <div>
+                <p className="text-green-100 font-medium">You keep:</p>
+                <p className="text-3xl sm:text-4xl font-bold">+{formatCurrency(results.youKeep)}</p>
+                <p className="text-sm text-green-200 mt-1">per month</p>
+              </div>
+              <div className="w-14 h-14 bg-white/20 rounded-xl flex items-center justify-center">
+                <DollarSign className="w-8 h-8 text-white" />
+              </div>
+            </div>
+          </motion.div>
         </div>
-
-        {/* Uplift Highlight */}
-        <motion.div
-          initial={{ scale: 0.95 }}
-          animate={{ scale: 1 }}
-          key={results.monthlyUplift}
-          className="bg-gradient-to-r from-green-600 to-green-700 rounded-xl p-6 text-white mt-6"
-        >
-          <div className="flex items-center justify-between">
-            <div>
-              <div className="flex items-center space-x-2 mb-1">
-                <TrendingUp className="w-5 h-5" />
-                <span className="text-green-100 font-medium">Your Monthly Uplift</span>
-              </div>
-              <p className="text-3xl sm:text-4xl font-bold">{formatCurrency(results.monthlyUplift)}</p>
-            </div>
-            <div className="text-right">
-              <div className="flex items-center space-x-2 mb-1">
-                <DollarSign className="w-5 h-5" />
-                <span className="text-green-100 font-medium">Annual Impact</span>
-              </div>
-              <p className="text-2xl sm:text-3xl font-bold">{formatCurrency(results.annualUplift)}</p>
-            </div>
-          </div>
-        </motion.div>
       </div>
     </motion.div>
   );

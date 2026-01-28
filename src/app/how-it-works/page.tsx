@@ -1,26 +1,25 @@
 import { Metadata } from "next";
 import Navigation from "@/components/ui/Navigation";
 import Footer from "@/components/ui/Footer";
-import LeadForm from "@/components/forms/LeadForm";
-import { ArrowRight, TrendingUp, Settings, Headphones, MapPin, Clock, Check } from "lucide-react";
+import { ArrowRight, Settings, Headphones, MapPin, Check, ShoppingCart } from "lucide-react";
 import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "How It Works | CashReady ATM Processing | PAI Partner",
-  description: "Learn how CashReady ATM helps you access wholesale PAI processing rates. Simple 3-step process: Rate Analysis, Migration, Daily Support.",
+  description: "Learn how CashReady ATM helps you access wholesale PAI processing rates. Simple 3-step process: Choose your service, migrate processing, start earning more.",
 };
 
 const steps = [
   {
     number: "01",
-    title: "Rate Analysis",
-    description: "We review your current processing statements to calculate your exact savings opportunity. No guesswork—just clear numbers.",
-    icon: TrendingUp,
+    title: "Choose Your Service Level",
+    description: "Pick Process Migration only, or Full Service (Cash Deliveries + Processing) if you're in GA/FL. Or just buy an ATM at wholesale rates.",
+    icon: ShoppingCart,
     details: [
-      "Submit your recent processing statements",
-      "We analyze your effective rate and fees",
-      "Receive detailed savings projection",
-      "Compare side-by-side scenarios",
+      "Processing-only migration (nationwide)",
+      "Full-service management (GA/FL only)",
+      "Equipment purchase at wholesale",
+      "Bundle options available",
     ],
   },
   {
@@ -37,14 +36,14 @@ const steps = [
   },
   {
     number: "03",
-    title: "Daily Support",
-    description: "Unlike corporate ISOs, we provide direct phone access and daily oversight. Real people, real support, real results.",
+    title: "Start Earning More",
+    description: "Keep more of every surcharge—usually $0.20 to $0.30 more per transaction. Daily support included.",
     icon: Headphones,
     details: [
-      "Direct line to your account manager",
+      "Immediate rate improvement",
+      "Direct phone support",
       "Real-time transaction monitoring",
-      "Proactive issue resolution",
-      "Monthly performance reviews",
+      "Monthly performance reports",
     ],
   },
 ];
@@ -66,7 +65,7 @@ export default function HowItWorksPage() {
   return (
     <>
       <Navigation />
-      <main>
+      <main id="how-it-works">
         {/* Hero */}
         <section className="gradient-navy py-20 lg:py-28">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -75,19 +74,19 @@ export default function HowItWorksPage() {
                 The Process
               </span>
               <h1 className="heading-lg text-white mt-4 mb-6">
-                Three Steps to Better Rates
+                Three Steps to Higher Fees
               </h1>
               <p className="text-lg text-gray-300 mb-8">
                 Getting started with CashReady is straightforward. We handle the technical complexity
                 so you can focus on growing your ATM business.
               </p>
-              <Link
-                href="#lead-form"
+              <a
+                href="mailto:info@cashreadyatm.com"
                 className="inline-flex items-center px-6 py-3 bg-green-600 text-white font-semibold rounded-lg hover:bg-green-700 transition-colors"
               >
-                Start Your Analysis
+                Contact Us
                 <ArrowRight className="ml-2 w-5 h-5" />
-              </Link>
+              </a>
             </div>
           </div>
         </section>
@@ -159,12 +158,12 @@ export default function HowItWorksPage() {
 
                 {/* Timeline Items */}
                 {[
-                  { day: "Day 1", title: "Initial Consultation", desc: "Rate analysis and savings projection" },
+                  { day: "Day 1", title: "Initial Contact", desc: "Call or email us to discuss your needs" },
                   { day: "Day 3", title: "Agreement Signing", desc: "Processing agreement and equipment order (if applicable)" },
                   { day: "Day 7", title: "Technical Setup", desc: "Terminal configuration and backend provisioning" },
                   { day: "Day 10", title: "Testing Phase", desc: "Transaction testing and verification" },
                   { day: "Day 14", title: "Go Live", desc: "Processing cutover and first transactions" },
-                ].map((item, index) => (
+                ].map((item) => (
                   <div key={item.day} className="relative flex items-start mb-8 last:mb-0">
                     <div className="absolute left-8 w-4 h-4 bg-green-600 rounded-full -translate-x-1.5 border-4 border-white" />
                     <div className="ml-20">
@@ -224,18 +223,29 @@ export default function HowItWorksPage() {
         </section>
 
         {/* CTA Section */}
-        <section id="lead-form" className="section-padding bg-gray-50">
+        <section className="section-padding bg-gray-50">
           <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100">
-              <div className="text-center mb-8">
-                <h2 className="heading-md text-gray-900 mb-4">
-                  Ready to Get Started?
-                </h2>
-                <p className="text-gray-600">
-                  Begin with a free rate analysis. No commitment required.
-                </p>
+            <div className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100 text-center">
+              <h2 className="heading-md text-gray-900 mb-4">
+                Ready to increase your ATM surcharge retention?
+              </h2>
+              <p className="text-gray-600 mb-8">
+                We don't do forms. Call or email us directly.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <a
+                  href="mailto:info@cashreadyatm.com"
+                  className="inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-white bg-green-600 rounded-lg transition-all duration-200 hover:bg-green-700 hover:shadow-lg"
+                >
+                  Contact Us
+                </a>
+                <a
+                  href="tel:+1-XXX-XXX-XXXX"
+                  className="inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-gray-900 bg-gray-100 rounded-lg transition-all duration-200 hover:bg-gray-200"
+                >
+                  Call Now
+                </a>
               </div>
-              <LeadForm />
             </div>
           </div>
         </section>

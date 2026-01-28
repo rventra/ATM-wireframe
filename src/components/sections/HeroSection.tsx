@@ -59,19 +59,17 @@ export default function HeroSection() {
               PAI Authorized ISO Partner
             </motion.div>
 
-            {/* Headline */}
-            <h1 className="heading-xl text-white mb-6">
-              Optimize Your{" "}
+            {/* Headline - Direct blue-collar language */}
+            <h1 className="heading-xl text-white mb-6 text-balance">
+              Get Higher{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-green-300">
-                ATM Processing
-              </span>{" "}
-              Revenue
+                ATM Fees
+              </span>
             </h1>
 
             {/* Subheadline */}
             <p className="text-lg sm:text-xl text-gray-300 leading-relaxed mb-8 max-w-xl">
-              Utilize our significant portfolio scale to access wholesale PAI rates.
-              Increase your surcharge retention and receive dedicated, direct support.
+              Get Access to our wholesale rates and increase your surcharge retention with dedicated, direct support at no additional cost
             </p>
 
             {/* Trust Indicators */}
@@ -90,20 +88,26 @@ export default function HeroSection() {
               </div>
             </div>
 
-            {/* CTAs */}
+            {/* CTAs - Three button layout */}
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
-                href="#lead-form"
+                href="/equipment"
                 className="inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-gray-900 bg-green-500 rounded-lg transition-all duration-200 hover:bg-green-400 hover:shadow-lg hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
               >
-                Analyze My Rate
+                View Equipment
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Link>
               <Link
-                href="/equipment"
+                href="#how-it-works"
                 className="inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-white border-2 border-white/30 rounded-lg transition-all duration-200 hover:bg-white/10 hover:border-white/50"
               >
-                View Equipment
+                How it Works
+              </Link>
+              <Link
+                href="#our-advantage"
+                className="inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-white border-2 border-white/30 rounded-lg transition-all duration-200 hover:bg-white/10 hover:border-white/50"
+              >
+                Our Advantage
               </Link>
             </div>
           </motion.div>

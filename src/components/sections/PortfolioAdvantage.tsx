@@ -1,7 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { TrendingUp, Shield, Clock, Users } from "lucide-react";
+import { TrendingUp, Shield, Clock, Users, ArrowRight } from "lucide-react";
+import Link from "next/link";
 
 const stats = [
   { label: "Monthly Transactions", value: "$50M+", icon: TrendingUp },
@@ -12,7 +13,7 @@ const stats = [
 
 export default function PortfolioAdvantage() {
   return (
-    <section className="section-padding bg-gray-50">
+    <section id="our-advantage" className="section-padding bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Content */}
@@ -23,7 +24,7 @@ export default function PortfolioAdvantage() {
             transition={{ duration: 0.6 }}
           >
             <span className="text-green-600 font-semibold text-sm uppercase tracking-wide">
-              The Portfolio Advantage
+              Our Advantage
             </span>
             <h2 className="heading-md text-gray-900 mt-3 mb-6">
               Volume Arbitrage Through Scale
@@ -33,11 +34,22 @@ export default function PortfolioAdvantage() {
               hundreds of ATM operators. This collective buying power unlocks wholesale PAI
               processing rates that individual operators cannot access on their own.
             </p>
-            <p className="text-body mb-8">
+            <p className="text-body mb-4">
               Our core arbitrage is simple: we secure institutional rates and pass the savings to
               you. While retail ISOs charge $0.50 per transaction, our partners keep significantly
               more of every surcharge.
             </p>
+
+            {/* How It Works Link */}
+            <div className="mb-8">
+              <Link
+                href="#how-it-works"
+                className="inline-flex items-center text-green-600 font-semibold hover:text-green-700 transition-colors group"
+              >
+                How It Works
+                <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </div>
 
             {/* Stats */}
             <div className="grid grid-cols-2 gap-6">
