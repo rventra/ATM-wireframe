@@ -27,7 +27,7 @@ export default function Home() {
         <PortfolioAdvantage />
 
         {/* Economics Section with Calculator */}
-        <section className="section-padding bg-white">
+        <section id="how-it-works" className="section-padding bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
               <div>
@@ -35,7 +35,7 @@ export default function Home() {
                   The Surcharge Gap
                 </span>
                 <h2 className="heading-md text-gray-900 mt-3 mb-6">
-                  Economics That Work For You
+                  Keep More of Every Transaction
                 </h2>
                 <p className="text-body mb-6">
                   Every transaction generates revenue. The question is: how much do you keep?

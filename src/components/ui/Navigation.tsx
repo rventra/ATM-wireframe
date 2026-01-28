@@ -50,12 +50,12 @@ export default function Navigation() {
               <Phone className="w-4 h-4 mr-2" />
               <span>Call Us</span>
             </a>
-            <Link
-              href="/#lead-form"
+            <a
+              href="mailto:info@cashreadyatm.com"
               className="inline-flex items-center justify-center px-6 py-3 text-sm font-semibold text-white bg-green-600 rounded-lg transition-all duration-200 hover:bg-green-700 hover:shadow-lg hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
             >
-              Analyze My Rate
-            </Link>
+              Contact Us
+            </a>
           </div>
 
           {/* Mobile menu button */}
@@ -91,13 +91,13 @@ export default function Navigation() {
                 <Phone className="w-4 h-4 mr-2" />
                 Call Now
               </a>
-              <Link
-                href="/#lead-form"
+              <a
+                href="mailto:info@cashreadyatm.com"
                 className="flex items-center justify-center px-6 py-3 text-sm font-semibold text-white bg-green-600 rounded-lg transition-all duration-200 hover:bg-green-700"
                 onClick={() => setIsOpen(false)}
               >
-                Analyze My Rate
-              </Link>
+                Contact Us
+              </a>
             </div>
           </div>
         </div>

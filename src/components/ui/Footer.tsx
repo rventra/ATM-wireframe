@@ -4,7 +4,7 @@ import { Shield, Phone, Mail, MapPin } from "lucide-react";
 const footerLinks = {
   services: [
     { label: "Processing Migration", href: "/how-it-works" },
-    { label: "Equipment Acquisition", href: "/equipment" },
+    { label: "Equipment", href: "/equipment" },
     { label: "Full-Service Management", href: "/how-it-works" },
   ],
   company: [
@@ -14,7 +14,7 @@ const footerLinks = {
     { label: "FAQ", href: "/faq" },
   ],
   support: [
-    { label: "Contact", href: "/contact" },
+    { label: "Contact Us", href: "mailto:info@cashreadyatm.com" },
     { label: "Technical Support", href: "/support" },
     { label: "Maintenance Request", href: "/support" },
   ],
