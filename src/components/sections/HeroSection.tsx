@@ -133,7 +133,7 @@ export default function HeroSection() {
                   ))}
                 </motion.div>
 
-                {/* CTAs */}
+                {/* CTAs - Updated to 3 physical buttons */}
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -141,36 +141,34 @@ export default function HeroSection() {
                   className="flex flex-col sm:flex-row items-center justify-center gap-4"
                 >
                   <Link
-                    href="/equipment"
+                    href="/contact"
                     className="inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-slate-900 bg-emerald-500 rounded-lg transition-all duration-200 hover:bg-emerald-400 hover:shadow-lg hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2"
                   >
-                    View Equipment
+                    Contact Us
                     <ArrowRight className="ml-2 w-5 h-5" />
                   </Link>
-                  <div className="flex gap-3">
-                    <Link
-                      href="#how-it-works"
-                      className="inline-flex items-center justify-center px-6 py-4 text-sm font-semibold text-white border-2 border-white/30 rounded-lg transition-all duration-200 hover:bg-white/10 hover:border-white/50"
-                    >
-                      How it Works
-                    </Link>
-                    <Link
-                      href="#our-advantage"
-                      className="inline-flex items-center justify-center px-6 py-4 text-sm font-semibold text-white border-2 border-white/30 rounded-lg transition-all duration-200 hover:bg-white/10 hover:border-white/50"
-                    >
-                      Our Advantage
-                    </Link>
-                  </div>
+                  <Link
+                    href="/partnership"
+                    className="inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-white border-2 border-white/30 rounded-lg transition-all duration-200 hover:bg-white/10 hover:border-white/50"
+                  >
+                    Partnership Levels
+                  </Link>
+                  <Link
+                    href="/equipment"
+                    className="inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-white border-2 border-white/30 rounded-lg transition-all duration-200 hover:bg-white/10 hover:border-white/50"
+                  >
+                    View Equipment
+                  </Link>
                 </motion.div>
 
-                {/* Screen Footer - like ATM soft keys area */}
+                {/* Screen Footer - Updated Terminal ID */}
                 <motion.div
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ delay: 1.1, duration: 0.5 }}
                   className="mt-10 pt-6 border-t border-white/10 flex justify-between items-center text-xs text-slate-500"
                 >
-                  <span className="tracking-wider">TERMINAL ID: CR-2025-PAI</span>
+                  <span className="tracking-wider">TERMINAL ID: KEEP-MORE-88888</span>
                   <div className="flex items-center gap-2">
                     <span>SECURE CONNECTION</span>
                     <div className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
@@ -186,114 +184,7 @@ export default function HeroSection() {
             </div>
           </div>
 
-          {/* Keypad Area */}
-          <div className="px-6 sm:px-8 pb-6 sm:pb-8">
-            <div className="max-w-sm mx-auto">
-              {/* Decorative keypad row */}
-              <div className="grid grid-cols-3 gap-2 mb-3">
-                {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((num) => (
-                  <motion.div
-                    key={num}
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="aspect-square rounded-lg flex items-center justify-center text-sm font-semibold text-slate-400 cursor-pointer transition-colors hover:text-white"
-                    style={{
-                      background: 'linear-gradient(145deg, #2a2a2a 0%, #1f1f1f 100%)',
-                      boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.05), 0 2px 4px rgba(0,0,0,0.3)',
-                    }}
-                  >
-                    {num}
-                  </motion.div>
-                ))}
-              </div>
-
-              {/* Bottom row with 0 and function keys */}
-              <div className="grid grid-cols-4 gap-2">
-                <div
-                  className="aspect-square rounded-lg flex items-center justify-center text-sm font-semibold text-slate-400"
-                  style={{
-                    background: 'linear-gradient(145deg, #2a2a2a 0%, #1f1f1f 100%)',
-                    boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.05), 0 2px 4px rgba(0,0,0,0.3)',
-                  }}
-                >
-                  .
-                </div>
-                <div
-                  className="aspect-square rounded-lg flex items-center justify-center text-sm font-semibold text-slate-400"
-                  style={{
-                    background: 'linear-gradient(145deg, #2a2a2a 0%, #1f1f1f 100%)',
-                    boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.05), 0 2px 4px rgba(0,0,0,0.3)',
-                  }}
-                >
-                  0
-                </div>
-                <div
-                  className="aspect-square rounded-lg flex items-center justify-center text-[10px] font-medium text-amber-400 uppercase tracking-wider"
-                  style={{
-                    background: 'linear-gradient(145deg, #2a2a2a 0%, #1f1f1f 100%)',
-                    boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.05), 0 2px 4px rgba(0,0,0,0.3)',
-                  }}
-                >
-                  Clear
-                </div>
-                <div
-                  className="aspect-square rounded-lg flex items-center justify-center text-[10px] font-medium text-emerald-400 uppercase tracking-wider"
-                  style={{
-                    background: 'linear-gradient(145deg, #2a2a2a 0%, #1f1f1f 100%)',
-                    boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.05), 0 2px 4px rgba(0,0,0,0.3)',
-                  }}
-                >
-                  Enter
-                </div>
-              </div>
-
-              {/* Card Slot */}
-              <div className="mt-4 h-10 rounded-lg relative overflow-hidden" style={{
-                background: 'linear-gradient(180deg, #0a0a0a 0%, #151515 50%, #0a0a0a 100%)',
-                boxShadow: 'inset 0 2px 6px rgba(0,0,0,0.8)',
-              }}>
-                <div className="absolute inset-x-8 top-1/2 -translate-y-1/2 h-1.5 rounded-full bg-slate-700" />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="text-[10px] text-slate-600 uppercase tracking-widest">Insert Card</span>
-                </div>
-              </div>
-
-              {/* Receipt Slot */}
-              <div className="mt-3 h-6 rounded-lg relative overflow-hidden" style={{
-                background: 'linear-gradient(180deg, #0a0a0a 0%, #111 100%)',
-                boxShadow: 'inset 0 1px 3px rgba(0,0,0,0.8)',
-              }}>
-                <div className="absolute inset-x-12 top-1/2 -translate-y-1/2 h-0.5 rounded-full bg-slate-800" />
-              </div>
-
-              {/* Cash Dispenser */}
-              <div className="mt-3 h-14 rounded-lg relative overflow-hidden" style={{
-                background: 'linear-gradient(180deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%)',
-                boxShadow: 'inset 0 2px 8px rgba(0,0,0,0.8)',
-              }}>
-                {/* Green glow line */}
-                <motion.div
-                  className="absolute inset-x-12 top-1/2 -translate-y-1/2 h-2 rounded-full"
-                  animate={{
-                    boxShadow: [
-                      '0 0 8px rgba(16, 185, 129, 0.2), inset 0 1px 2px rgba(16, 185, 129, 0.1)',
-                      '0 0 16px rgba(16, 185, 129, 0.5), inset 0 1px 2px rgba(16, 185, 129, 0.3)',
-                      '0 0 8px rgba(16, 185, 129, 0.2), inset 0 1px 2px rgba(16, 185, 129, 0.1)',
-                    ]
-                  }}
-                  transition={{ duration: 2.5, repeat: Infinity }}
-                  style={{
-                    background: 'linear-gradient(90deg, transparent 0%, #10b981 50%, transparent 100%)',
-                  }}
-                />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="text-[10px] text-slate-600 uppercase tracking-widest">Cash Dispenser</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Bottom ATM branding strip */}
+          {/* Bottom ATM branding strip only - no keypad */}
           <div className="px-6 sm:px-8 py-4 border-t border-white/5 flex justify-between items-center">
             <span className="text-[10px] text-slate-600 tracking-wider">CASHREADY ATM SYSTEMS</span>
             <div className="flex items-center gap-2">
