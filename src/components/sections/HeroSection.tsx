@@ -2,50 +2,64 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { ArrowRight, ChevronDown, Shield, Check } from "lucide-react";
+import { ArrowRight, ChevronDown, Shield, Check, Clock, CreditCard, DollarSign, MapPin } from "lucide-react";
+
+const features = [
+  { icon: Clock, label: "24/7 Support" },
+  { icon: CreditCard, label: "Lower Payment Processing Fees" },
+  { icon: DollarSign, label: "Wholesale Prices on ATMs" },
+  { icon: MapPin, label: "ATM Servicing in Select Locations" },
+];
 
 export default function HeroSection() {
   return (
     <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-[#0f172a]">
-      {/* Subtle Plus Pattern Overlay */}
-      <div className="absolute inset-0 opacity-[0.08]" style={{
-        backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M20 18v-2h-2v2h-2v2h2v2h2v-2h2v-2h-2zm0-20V0h-2v2h-2v2h2v2h2V4h2V2h-2zM6 18v-2H4v2H0v2h4v2h2v-2h4v-2H6zM6 2V0H4v2H0v2h4v2h2V4h4V2H6z'/%3E%3C/g%3E%3C/svg%3E")`,
+      {/* Plus Pattern Overlay */}
+      <div className="absolute inset-0 opacity-[0.06]" style={{
+        backgroundImage: `url("data:image/svg+xml,%3Csvg width='48' height='48' viewBox='0 0 48 48' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M24 20v-4h-4v4h-4v4h4v4h4v-4h4v-4h-4zm0-24V0h-4v4h-4v4h4v4h4V8h4V4h-4zM8 20v-4H4v4H0v4h4v4h4v-4h4v-4H8zM8 4V0H4v4H0v4h4v4h4V8h4V4H8z'/%3E%3C/g%3E%3C/svg%3E")`,
       }} />
 
-      {/* Gradient overlay for depth */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#0f172a] via-[#0f172a] to-[#1e3a5f] opacity-80" />
+      {/* Emerald radial glow behind right column */}
+      <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-[600px] h-[600px] bg-emerald-500/10 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          {/* Left Column - Copy */}
+          {/* Left Column - Content */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            {/* Badge */}
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.2, duration: 0.5 }}
-              className="inline-flex items-center px-4 py-2 bg-slate-800/80 backdrop-blur-sm rounded-full text-emerald-400 text-sm font-medium mb-6 border border-slate-700"
-            >
-              <span className="w-2 h-2 bg-emerald-500 rounded-full mr-2 animate-pulse" />
-              PAI Authorized ISO Partner
-            </motion.div>
-
             {/* Headline */}
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-6 text-balance font-display">
               Get Higher{" "}
               <span className="text-emerald-400">ATM Fees</span>
             </h1>
 
-            {/* Subheadline */}
+            {/* Subtext */}
             <p className="text-lg sm:text-xl text-slate-300 leading-relaxed mb-8 max-w-xl">
               Get access to our wholesale rates and increase your surcharge retention with dedicated, direct support at no additional cost.
             </p>
 
-            {/* CTAs - Three button layout */}
+            {/* Feature Grid - 2x2 */}
+            <div className="grid grid-cols-2 gap-3 mb-8">
+              {features.map((feature, index) => (
+                <motion.div
+                  key={feature.label}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.3 + index * 0.1, duration: 0.4 }}
+                  className="flex items-center gap-3 p-3 rounded-lg bg-white/5 border border-white/10 backdrop-blur-sm"
+                >
+                  <div className="w-8 h-8 rounded-lg bg-emerald-500/10 flex items-center justify-center flex-shrink-0">
+                    <feature.icon className="w-4 h-4 text-emerald-400" />
+                  </div>
+                  <span className="text-sm text-slate-300 leading-tight">{feature.label}</span>
+                </motion.div>
+              ))}
+            </div>
+
+            {/* CTAs */}
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
                 href="/equipment"
@@ -69,171 +83,135 @@ export default function HeroSection() {
             </div>
           </motion.div>
 
-          {/* Right Column - ATM Monitor Visualization */}
+          {/* Right Column - Full ATM Fascia */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.3, duration: 0.6 }}
             className="relative hidden lg:block"
           >
-            {/* ATM Machine Container */}
+            {/* ATM Fascia Container */}
             <div className="relative max-w-md mx-auto">
-              {/* ATM Bezel/Frame - Metallic look */}
-              <div className="relative rounded-3xl p-4 sm:p-6" style={{
-                background: 'linear-gradient(145deg, #374151 0%, #1f2937 50%, #111827 100%)',
-                boxShadow: `
-                  inset 0 2px 4px rgba(255,255,255,0.1),
-                  inset 0 -2px 4px rgba(0,0,0,0.5),
-                  0 25px 50px -12px rgba(0,0,0,0.8),
-                  0 0 0 1px rgba(255,255,255,0.1)
-                `,
-              }}>
-                {/* ATM Header */}
+              {/* Main ATM Body - Metallic Bezel */}
+              <div
+                className="relative rounded-3xl p-6"
+                style={{
+                  background: 'linear-gradient(145deg, #3d3d3d 0%, #2a2a2a 30%, #1a1a1a 70%, #0f0f0f 100%)',
+                  boxShadow: `
+                    inset 0 1px 1px rgba(255,255,255,0.15),
+                    inset 0 -1px 1px rgba(0,0,0,0.5),
+                    0 40px 80px -20px rgba(0,0,0,0.8),
+                    0 0 0 1px rgba(255,255,255,0.08)
+                  `,
+                }}
+              >
+                {/* Top Brand Bar */}
                 <div className="flex justify-between items-center mb-4 px-2">
                   <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse" />
-                    <span className="text-xs text-emerald-400 font-medium tracking-wider uppercase">Online</span>
+                    <div className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse shadow-[0_0_8px_rgba(16,185,129,0.8)]" />
+                    <span className="text-xs text-emerald-400 font-medium tracking-wider uppercase">System Online</span>
                   </div>
-                  <div className="text-xs text-slate-400 font-medium tracking-wider">CashReady ATM</div>
+                  <span className="text-xs text-slate-500 font-medium tracking-wider">CashReady ATM</span>
                 </div>
 
-                {/* ATM Screen Container */}
-                <div className="relative rounded-xl overflow-hidden" style={{
-                  background: 'linear-gradient(135deg, #0f172a 0%, #1e293b 100%)',
-                  boxShadow: 'inset 0 2px 8px rgba(0,0,0,0.6), 0 1px 0 rgba(255,255,255,0.1)',
-                }}>
-                  {/* Screen Inner Border */}
-                  <div className="p-5 sm:p-6">
-                    {/* Processing Status */}
-                    <div className="flex items-center justify-center gap-2 mb-6">
-                      <motion.div
-                        animate={{ opacity: [0.4, 1, 0.4] }}
-                        transition={{ duration: 1.5, repeat: Infinity }}
-                        className="w-1.5 h-1.5 bg-amber-400 rounded-full"
-                      />
-                      <span className="text-xs text-amber-400 font-medium tracking-wider uppercase">Processing Transaction...</span>
+                {/* ATM Screen - Dark Bezel Inner */}
+                <div
+                  className="rounded-2xl p-1 mb-5"
+                  style={{
+                    background: 'linear-gradient(145deg, #0a0a0a 0%, #1a1a1a 100%)',
+                    boxShadow: 'inset 0 2px 4px rgba(0,0,0,0.8), 0 1px 0 rgba(255,255,255,0.05)',
+                  }}
+                >
+                  {/* Screen Display */}
+                  <div
+                    className="rounded-xl p-6 relative overflow-hidden"
+                    style={{
+                      background: 'linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%)',
+                    }}
+                  >
+                    {/* Screen Header */}
+                    <div className="text-center mb-6">
+                      <p className="text-xs text-slate-400 uppercase tracking-widest mb-1">Surcharge Retention</p>
+                      <div className="flex items-center justify-center gap-2">
+                        <motion.div
+                          animate={{ opacity: [0.4, 1, 0.4] }}
+                          transition={{ duration: 2, repeat: Infinity }}
+                          className="w-1.5 h-1.5 bg-emerald-400 rounded-full"
+                        />
+                        <span className="text-xs text-emerald-400 font-medium">Live Comparison</span>
+                      </div>
                     </div>
 
-                    {/* Surcharge Split Visualization */}
-                    <div className="flex items-center justify-center gap-6">
-                      {/* Vertical Stacked Bar */}
-                      <div className="relative w-24 sm:w-28 h-56 sm:h-64 bg-slate-800/80 rounded-2xl overflow-hidden" style={{
-                        boxShadow: 'inset 0 2px 4px rgba(0,0,0,0.5)',
-                      }}>
-                        {/* Grid lines for visual interest */}
-                        <div className="absolute inset-0 opacity-20">
-                          <div className="h-full w-full" style={{
-                            backgroundImage: 'repeating-linear-gradient(0deg, transparent, transparent 19%, rgba(255,255,255,0.1) 20%)',
-                          }} />
-                        </div>
-
-                        {/* Stacked Segments */}
-                        <div className="absolute inset-0 flex flex-col">
-                          {/* Your Retention - 95% (Green) - Animated from bottom */}
-                          <motion.div
-                            initial={{ height: 0 }}
-                            animate={{ height: "95%" }}
-                            transition={{
-                              delay: 0.8,
-                              duration: 1.2,
-                              ease: [0.25, 0.46, 0.45, 0.94]
-                            }}
-                            className="relative w-full bg-gradient-to-t from-emerald-600 to-emerald-400 rounded-t-lg"
-                            style={{
-                              boxShadow: '0 -2px 10px rgba(16, 185, 129, 0.4)',
-                            }}
-                          >
-                            {/* Shine effect */}
-                            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent" />
-
-                            {/* Label inside bar */}
-                            <div className="absolute top-4 left-0 right-0 text-center px-2">
-                              <p className="text-[10px] text-emerald-100 font-medium uppercase tracking-wider mb-1">Your Retention</p>
-                              <p className="text-sm sm:text-base font-bold text-white">Maximum</p>
-                            </div>
-                          </motion.div>
-
-                          {/* Wholesale Cost - 5% (Dark/Red) */}
-                          <motion.div
-                            initial={{ height: "100%" }}
-                            animate={{ height: "5%" }}
-                            transition={{
-                              delay: 0.8,
-                              duration: 1.2,
-                              ease: [0.25, 0.46, 0.45, 0.94]
-                            }}
-                            className="w-full bg-gradient-to-b from-slate-600 to-slate-700"
-                          >
-                            {/* Label inside small bar */}
-                            <div className="absolute bottom-1 left-0 right-0 text-center px-1">
-                              <p className="text-[8px] text-slate-400 uppercase tracking-wider">Cost</p>
-                            </div>
-                          </motion.div>
-                        </div>
-
-                        {/* Percentage indicators */}
+                    {/* Before/After Bars */}
+                    <div className="flex items-end justify-center gap-8 h-48">
+                      {/* Industry Average Bar */}
+                      <div className="flex flex-col items-center gap-2">
                         <motion.div
-                          initial={{ opacity: 0 }}
-                          animate={{ opacity: 1 }}
-                          transition={{ delay: 1.8, duration: 0.5 }}
-                          className="absolute right-2 top-2 text-[10px] font-bold text-emerald-300"
+                          initial={{ height: 0 }}
+                          animate={{ height: "25%" }}
+                          transition={{ delay: 0.5, duration: 0.8, ease: "easeOut" }}
+                          className="w-16 bg-gradient-to-t from-slate-600 to-slate-500 rounded-t-lg relative"
+                          style={{ height: '60px' }}
                         >
-                          95%
+                          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent" />
                         </motion.div>
+                        <div className="text-center">
+                          <p className="text-[10px] text-slate-400 uppercase tracking-wider">Industry Average</p>
+                          <p className="text-xs text-slate-500">Limited</p>
+                        </div>
                       </div>
 
-                      {/* Legend */}
-                      <motion.div
-                        initial={{ opacity: 0, x: 20 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ delay: 1.5, duration: 0.5 }}
-                        className="flex flex-col gap-3"
-                      >
-                        {/* Your Retention Legend */}
-                        <div className="flex items-center gap-2">
-                          <div className="w-3 h-3 rounded bg-gradient-to-br from-emerald-400 to-emerald-600" />
-                          <div>
-                            <p className="text-xs font-medium text-white">Your Retention</p>
-                            <p className="text-[10px] text-emerald-400">Majority Share</p>
-                          </div>
-                        </div>
+                      {/* Cash Ready Bar */}
+                      <div className="flex flex-col items-center gap-2">
+                        <motion.div
+                          initial={{ height: 0 }}
+                          animate={{ height: "100%" }}
+                          transition={{ delay: 0.8, duration: 1.2, ease: [0.25, 0.46, 0.45, 0.94] }}
+                          className="w-20 bg-gradient-to-t from-emerald-600 via-emerald-500 to-emerald-400 rounded-t-lg relative overflow-hidden"
+                          style={{
+                            height: '180px',
+                            boxShadow: '0 -4px 20px rgba(16, 185, 129, 0.4), inset 0 1px 0 rgba(255,255,255,0.2)',
+                          }}
+                        >
+                          {/* Animated shine */}
+                          <motion.div
+                            className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"
+                            animate={{ x: ['-100%', '100%'] }}
+                            transition={{ delay: 2, duration: 1.5, ease: "easeInOut" }}
+                          />
 
-                        {/* Wholesale Cost Legend */}
-                        <div className="flex items-center gap-2">
-                          <div className="w-3 h-3 rounded bg-slate-600" />
-                          <div>
-                            <p className="text-xs font-medium text-slate-300">Wholesale Cost</p>
-                            <p className="text-[10px] text-slate-500">Minimal</p>
+                          {/* Label inside bar */}
+                          <div className="absolute top-4 left-0 right-0 text-center px-2">
+                            <p className="text-[9px] text-emerald-100 uppercase tracking-wider mb-0.5">Your Retention</p>
+                            <p className="text-sm font-bold text-white">Maximized</p>
                           </div>
+                        </motion.div>
+                        <div className="text-center">
+                          <p className="text-[10px] text-emerald-400 uppercase tracking-wider">Cash Ready Wholesale</p>
+                          <p className="text-xs text-emerald-300/70">3x More</p>
                         </div>
-                      </motion.div>
+                      </div>
                     </div>
 
-                    {/* Transaction Status Bar */}
-                    <motion.div
-                      initial={{ width: 0 }}
-                      animate={{ width: "100%" }}
-                      transition={{ delay: 2, duration: 1.5, ease: "easeInOut" }}
-                      className="mt-6 h-1 bg-slate-700 rounded-full overflow-hidden"
-                    >
-                      <motion.div
-                        animate={{ x: ["-100%", "100%"] }}
-                        transition={{ delay: 2, duration: 1.5, ease: "easeInOut" }}
-                        className="h-full w-1/2 bg-gradient-to-r from-transparent via-emerald-500 to-transparent"
-                      />
-                    </motion.div>
+                    {/* Screen Footer */}
+                    <div className="mt-6 pt-4 border-t border-white/10">
+                      <div className="flex justify-between items-center text-[10px] text-slate-500">
+                        <span>Processing Rate: Wholesale</span>
+                        <span className="text-emerald-400">Active</span>
+                      </div>
+                    </div>
                   </div>
                 </div>
 
-                {/* Keypad Area - Decorative */}
-                <div className="mt-4 grid grid-cols-3 gap-2 px-2">
-                  {[1, 2, 3, 4, 5, 6].map((num) => (
+                {/* 3x4 Numeric Keypad */}
+                <div className="grid grid-cols-3 gap-2 mb-5 px-2">
+                  {[1, 2, 3, 4, 5, 6, 7, 8, 9, '', 0, ''].map((num, i) => (
                     <div
-                      key={num}
-                      className="aspect-[2/1] rounded-md flex items-center justify-center text-xs font-semibold text-slate-500"
+                      key={i}
+                      className="aspect-square rounded-lg flex items-center justify-center text-sm font-bold text-slate-400 select-none"
                       style={{
-                        background: 'linear-gradient(145deg, #374151 0%, #1f2937 100%)',
-                        boxShadow: 'inset 0 1px 2px rgba(0,0,0,0.5), 0 1px 0 rgba(255,255,255,0.05)',
+                        background: num !== '' ? 'linear-gradient(145deg, #2a2a2a 0%, #1f1f1f 100%)' : 'transparent',
+                        boxShadow: num !== '' ? 'inset 0 1px 0 rgba(255,255,255,0.05), 0 2px 4px rgba(0,0,0,0.3)' : 'none',
                       }}
                     >
                       {num}
@@ -241,33 +219,74 @@ export default function HeroSection() {
                   ))}
                 </div>
 
-                {/* Card Slot */}
-                <div className="mt-4 px-2">
-                  <div className="h-3 rounded-full bg-slate-800" style={{
-                    boxShadow: 'inset 0 2px 4px rgba(0,0,0,0.5), 0 1px 0 rgba(255,255,255,0.05)',
-                  }}>
-                    <div className="h-full w-full rounded-full bg-gradient-to-r from-slate-800 via-slate-700 to-slate-800" />
+                {/* Function Keys Row */}
+                <div className="grid grid-cols-4 gap-2 mb-5 px-2">
+                  {['Cancel', 'Clear', 'Enter', ''].map((label, i) => (
+                    <div
+                      key={i}
+                      className={`h-10 rounded-lg flex items-center justify-center text-[10px] font-medium uppercase tracking-wider ${
+                        label === 'Enter' ? 'text-emerald-400' : label ? 'text-amber-400' : ''
+                      }`}
+                      style={{
+                        background: label ? 'linear-gradient(145deg, #2a2a2a 0%, #1f1f1f 100%)' : 'transparent',
+                        boxShadow: label ? 'inset 0 1px 0 rgba(255,255,255,0.05), 0 2px 4px rgba(0,0,0,0.3)' : 'none',
+                      }}
+                    >
+                      {label}
+                    </div>
+                  ))}
+                </div>
+
+                {/* Glowing Cash Exit Slot */}
+                <div className="px-2">
+                  <div
+                    className="h-12 rounded-lg relative overflow-hidden"
+                    style={{
+                      background: 'linear-gradient(180deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%)',
+                      boxShadow: 'inset 0 2px 8px rgba(0,0,0,0.8), 0 1px 0 rgba(255,255,255,0.05)',
+                    }}
+                  >
+                    {/* Green glow effect */}
+                    <motion.div
+                      className="absolute inset-x-4 top-1/2 -translate-y-1/2 h-2 rounded-full"
+                      animate={{
+                        boxShadow: [
+                          '0 0 10px rgba(16, 185, 129, 0.3), inset 0 1px 2px rgba(16, 185, 129, 0.2)',
+                          '0 0 20px rgba(16, 185, 129, 0.6), inset 0 1px 2px rgba(16, 185, 129, 0.4)',
+                          '0 0 10px rgba(16, 185, 129, 0.3), inset 0 1px 2px rgba(16, 185, 129, 0.2)',
+                        ]
+                      }}
+                      transition={{ duration: 2, repeat: Infinity }}
+                      style={{
+                        background: 'linear-gradient(90deg, transparent 0%, #10b981 50%, transparent 100%)',
+                      }}
+                    />
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <span className="text-[10px] text-slate-500 uppercase tracking-widest">Cash Dispenser</span>
+                    </div>
                   </div>
                 </div>
               </div>
 
-              {/* Floating Badge - Glassmorphism */}
+              {/* Floating Badge - Wholesale Pricing Locked */}
               <motion.div
-                initial={{ opacity: 0, y: 20, scale: 0.9 }}
-                animate={{ opacity: 1, y: 0, scale: 1 }}
-                transition={{ delay: 2.2, duration: 0.5 }}
-                className="absolute -top-4 -right-4 sm:-right-8"
+                initial={{ opacity: 0, scale: 0.8, y: 20 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
+                transition={{ delay: 1.5, duration: 0.5 }}
+                className="absolute -top-2 -right-4 z-10"
               >
                 <motion.div
-                  animate={{ y: [0, -8, 0] }}
-                  transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                  className="flex items-center gap-2 px-4 py-3 rounded-xl backdrop-blur-md border border-white/20"
+                  animate={{ y: [0, -6, 0] }}
+                  transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                  className="flex items-center gap-2 px-4 py-3 rounded-xl"
                   style={{
-                    background: 'linear-gradient(135deg, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0.05) 100%)',
-                    boxShadow: '0 8px 32px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.2)',
+                    background: 'linear-gradient(135deg, rgba(16, 185, 129, 0.2) 0%, rgba(16, 185, 129, 0.1) 100%)',
+                    backdropFilter: 'blur(10px)',
+                    border: '1px solid rgba(16, 185, 129, 0.3)',
+                    boxShadow: '0 8px 32px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.1)',
                   }}
                 >
-                  <div className="w-8 h-8 rounded-full bg-emerald-500/20 flex items-center justify-center">
+                  <div className="w-8 h-8 rounded-full bg-emerald-500/20 flex items-center justify-center border border-emerald-500/30">
                     <Shield className="w-4 h-4 text-emerald-400" />
                   </div>
                   <div>
@@ -280,15 +299,19 @@ export default function HeroSection() {
                 </motion.div>
               </motion.div>
 
-              {/* Corner Accent */}
+              {/* Decorative Corner Accents */}
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                transition={{ delay: 2.5, duration: 0.5 }}
-                className="absolute -bottom-2 -left-2 w-16 h-16"
-              >
-                <div className="w-full h-full rounded-full bg-emerald-500/10 blur-xl" />
-              </motion.div>
+                transition={{ delay: 2, duration: 0.5 }}
+                className="absolute -bottom-4 -left-4 w-24 h-24 bg-emerald-500/5 rounded-full blur-2xl"
+              />
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 2.2, duration: 0.5 }}
+                className="absolute -top-4 right-1/4 w-16 h-16 bg-emerald-500/10 rounded-full blur-xl"
+              />
             </div>
           </motion.div>
         </div>
@@ -303,7 +326,7 @@ export default function HeroSection() {
           <motion.div
             animate={{ y: [0, 8, 0] }}
             transition={{ duration: 1.5, repeat: Infinity }}
-            className="text-white/30"
+            className="text-white/20"
           >
             <ChevronDown className="w-8 h-8" />
           </motion.div>
