@@ -68,6 +68,33 @@ export default function HeroSection() {
                 boxShadow: 'inset 0 4px 20px rgba(0,0,0,0.6), 0 1px 0 rgba(255,255,255,0.05)',
               }}
             >
+              {/* ATM Screen Scan Lines - Authentic CRT effect */}
+              <div
+                className="absolute inset-0 pointer-events-none z-10 opacity-[0.08]"
+                style={{
+                  backgroundImage: 'repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.4) 2px, rgba(0,0,0,0.4) 4px)',
+                }}
+              />
+
+              {/* Subtle horizontal refresh lines */}
+              <motion.div
+                className="absolute inset-0 pointer-events-none z-10"
+                style={{
+                  background: 'linear-gradient(180deg, transparent 0%, rgba(16, 185, 129, 0.03) 50%, transparent 100%)',
+                  height: '4px',
+                }}
+                animate={{ top: ['-4px', '100%'] }}
+                transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
+              />
+
+              {/* Screen glass reflection */}
+              <div
+                className="absolute inset-0 pointer-events-none z-10 opacity-[0.03]"
+                style={{
+                  background: 'linear-gradient(135deg, rgba(255,255,255,0.1) 0%, transparent 50%, transparent 100%)',
+                }}
+              />
+
               {/* Screen glow effect */}
               <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-px bg-gradient-to-r from-transparent via-emerald-500/30 to-transparent" />
 
@@ -133,31 +160,37 @@ export default function HeroSection() {
                   ))}
                 </motion.div>
 
-                {/* CTAs - Updated to 3 physical buttons */}
+                {/* CTAs - 4 buttons including Why CashReady */}
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.9, duration: 0.6 }}
-                  className="flex flex-col sm:flex-row items-center justify-center gap-4"
+                  className="flex flex-col sm:flex-row items-center justify-center gap-3 flex-wrap"
                 >
                   <Link
                     href="/contact"
-                    className="inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-slate-900 bg-emerald-500 rounded-lg transition-all duration-200 hover:bg-emerald-400 hover:shadow-lg hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2"
+                    className="inline-flex items-center justify-center px-6 py-3.5 text-sm font-semibold text-slate-900 bg-emerald-500 rounded-lg transition-all duration-200 hover:bg-emerald-400 hover:shadow-lg hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2"
                   >
                     Contact Us
-                    <ArrowRight className="ml-2 w-5 h-5" />
+                    <ArrowRight className="ml-2 w-4 h-4" />
                   </Link>
                   <Link
                     href="/partnership"
-                    className="inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-white border-2 border-white/30 rounded-lg transition-all duration-200 hover:bg-white/10 hover:border-white/50"
+                    className="inline-flex items-center justify-center px-6 py-3.5 text-sm font-semibold text-white border-2 border-white/30 rounded-lg transition-all duration-200 hover:bg-white/10 hover:border-white/50"
                   >
                     Partnership Levels
                   </Link>
                   <Link
                     href="/equipment"
-                    className="inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-white border-2 border-white/30 rounded-lg transition-all duration-200 hover:bg-white/10 hover:border-white/50"
+                    className="inline-flex items-center justify-center px-6 py-3.5 text-sm font-semibold text-white border-2 border-white/30 rounded-lg transition-all duration-200 hover:bg-white/10 hover:border-white/50"
                   >
                     View Equipment
+                  </Link>
+                  <Link
+                    href="#why-cashready"
+                    className="inline-flex items-center justify-center px-6 py-3.5 text-sm font-semibold text-emerald-400 border-2 border-emerald-500/40 rounded-lg transition-all duration-200 hover:bg-emerald-500/10 hover:border-emerald-400"
+                  >
+                    Why CashReady
                   </Link>
                 </motion.div>
 
@@ -176,11 +209,11 @@ export default function HeroSection() {
                 </motion.div>
               </div>
 
-              {/* Screen corner accents */}
-              <div className="absolute top-4 left-4 w-6 h-6 border-l-2 border-t-2 border-emerald-500/30 rounded-tl-lg" />
-              <div className="absolute top-4 right-4 w-6 h-6 border-r-2 border-t-2 border-emerald-500/30 rounded-tr-lg" />
-              <div className="absolute bottom-4 left-4 w-6 h-6 border-l-2 border-b-2 border-emerald-500/30 rounded-bl-lg" />
-              <div className="absolute bottom-4 right-4 w-6 h-6 border-r-2 border-b-2 border-emerald-500/30 rounded-br-lg" />
+              {/* Screen corner accents - more pronounced */}
+              <div className="absolute top-3 left-3 w-8 h-8 border-l-[3px] border-t-[3px] border-emerald-500/40 rounded-tl-lg" />
+              <div className="absolute top-3 right-3 w-8 h-8 border-r-[3px] border-t-[3px] border-emerald-500/40 rounded-tr-lg" />
+              <div className="absolute bottom-3 left-3 w-8 h-8 border-l-[3px] border-b-[3px] border-emerald-500/40 rounded-bl-lg" />
+              <div className="absolute bottom-3 right-3 w-8 h-8 border-r-[3px] border-b-[3px] border-emerald-500/40 rounded-br-lg" />
             </div>
           </div>
 
