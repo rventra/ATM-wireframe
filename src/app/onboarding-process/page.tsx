@@ -1,8 +1,7 @@
 import { Metadata } from "next";
 import Navigation from "@/components/ui/Navigation";
 import Footer from "@/components/ui/Footer";
-import { ArrowRight, Check, Phone, Mail } from "lucide-react";
-import Link from "next/link";
+import { Check, Phone, Mail, ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Onboarding Process | CashReady ATM Processing | PAI Partner",
@@ -12,44 +11,34 @@ export const metadata: Metadata = {
 const steps = [
   {
     number: "1",
-    title: "Choose Your Partnership Level",
-    description: "Select the service tier that fits your business needs.",
+    title: "Choose",
+    subtitle: "Your Partnership Level",
     items: [
-      "Processing-only migration (nationwide)",
-      "Equipment purchase at wholesale rates",
-      "Full-service management (GA/FL only)",
+      "Processing migration",
+      "Equipment purchase",
+      "Full-service (GA/FL)",
     ],
   },
   {
     number: "2",
-    title: "Technical Migration",
-    description: "Our engineering team handles the complete transition.",
+    title: "Migrate",
+    subtitle: "Technical Setup",
     items: [
-      "Terminal reconfiguration or replacement",
-      "PAI backend provisioning",
-      "Same-day transition for most equipment",
-      "Full testing and verification",
+      "Terminal reconfiguration",
+      "PAI backend setup",
+      "Same-day transition",
     ],
   },
   {
     number: "3",
-    title: "Go Live & Grow",
-    description: "Start processing with wholesale rates immediately.",
+    title: "Go Live",
+    subtitle: "Start Processing",
     items: [
-      "Immediate rate improvement",
-      "Direct phone support access",
-      "Real-time transaction monitoring",
-      "Monthly performance insights",
+      "Wholesale rates active",
+      "Direct support access",
+      "Real-time monitoring",
     ],
   },
-];
-
-const timeline = [
-  { day: "Day 1", title: "Initial Contact", desc: "Discovery call to understand your needs" },
-  { day: "Day 3", title: "Agreement & Setup", desc: "Processing agreement and technical assessment" },
-  { day: "Day 7", title: "Technical Migration", desc: "Terminal configuration and backend provisioning" },
-  { day: "Day 10", title: "Testing & Verification", desc: "Transaction testing and go-live preparation" },
-  { day: "Day 14", title: "Live Processing", desc: "Processing cutover and first transactions" },
 ];
 
 export default function OnboardingProcessPage() {
@@ -58,40 +47,59 @@ export default function OnboardingProcessPage() {
       <Navigation />
       <main>
         {/* Hero */}
-        <section className="bg-slate-900 py-16 lg:py-24">
-          <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
+        <section className="bg-slate-900 py-16 lg:py-20">
+          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 className="text-3xl sm:text-4xl font-bold text-white mb-4">
               Onboarding Process
             </h1>
             <p className="text-lg text-slate-400">
-              Three simple steps to wholesale processing. Most partners are live within two weeks.
+              Three steps to wholesale processing. Most partners live within two weeks.
             </p>
           </div>
         </section>
 
-        {/* Steps */}
-        <section className="section-padding bg-white">
-          <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="space-y-12">
-              {steps.map((step) => (
-                <div key={step.number} className="flex gap-6">
-                  <div className="flex-shrink-0">
-                    <span className="flex items-center justify-center w-10 h-10 rounded-full bg-emerald-100 text-emerald-700 font-bold">
-                      {step.number}
-                    </span>
-                  </div>
-                  <div>
-                    <h2 className="text-xl font-bold text-gray-900 mb-2">{step.title}</h2>
-                    <p className="text-gray-600 mb-4">{step.description}</p>
+        {/* Horizontal Steps */}
+        <section className="py-16 lg:py-20 bg-white">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex flex-col lg:flex-row items-start lg:items-center justify-center gap-4 lg:gap-8">
+              {steps.map((step, index) => (
+                <div key={step.number} className="flex items-center gap-4 lg:gap-8 w-full lg:w-auto">
+                  {/* Step Card */}
+                  <div className="flex-1 lg:flex-none bg-gray-50 rounded-xl p-6 border border-gray-100 min-w-0 lg:w-64">
+                    <div className="flex items-center gap-3 mb-4">
+                      <span className="flex items-center justify-center w-8 h-8 rounded-full bg-emerald-500 text-white font-bold text-sm">
+                        {step.number}
+                      </span>
+                      <div>
+                        <h2 className="text-lg font-bold text-gray-900">{step.title}</h2>
+                        <p className="text-xs text-gray-500">{step.subtitle}</p>
+                      </div>
+                    </div>
                     <ul className="space-y-2">
                       {step.items.map((item) => (
-                        <li key={item} className="flex items-start">
-                          <Check className="w-5 h-5 text-emerald-600 mr-2 flex-shrink-0 mt-0.5" />
-                          <span className="text-gray-600">{item}</span>
+                        <li key={item} className="flex items-center text-sm text-gray-600">
+                          <Check className="w-4 h-4 text-emerald-500 mr-2 flex-shrink-0" />
+                          <span>{item}</span>
                         </li>
                       ))}
                     </ul>
                   </div>
+
+                  {/* Arrow (not on last item) */}
+                  {index < steps.length - 1 && (
+                    <div className="hidden lg:flex items-center justify-center">
+                      <ArrowRight className="w-8 h-8 text-emerald-400" />
+                    </div>
+                  )}
+                  
+                  {/* Mobile Arrow (down) */}
+                  {index < steps.length - 1 && (
+                    <div className="flex lg:hidden items-center justify-center w-full">
+                      <div className="transform rotate-90">
+                        <ArrowRight className="w-6 h-6 text-emerald-400" />
+                      </div>
+                    </div>
+                  )}
                 </div>
               ))}
             </div>
@@ -99,22 +107,27 @@ export default function OnboardingProcessPage() {
         </section>
 
         {/* Timeline */}
-        <section className="section-padding bg-gray-50">
-          <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-2xl font-bold text-gray-900 mb-8 text-center">Typical Timeline</h2>
-            <div className="space-y-6">
-              {timeline.map((item) => (
-                <div key={item.day} className="flex gap-4">
-                  <div className="flex-shrink-0 w-20 text-right">
-                    <span className="text-sm font-bold text-emerald-600">{item.day}</span>
+        <section className="py-16 bg-gray-50">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="text-xl font-bold text-gray-900 mb-8 text-center">Typical Timeline</h2>
+            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+              {[
+                { day: "Day 1", label: "Contact" },
+                { day: "Day 3", label: "Agreement" },
+                { day: "Day 7", label: "Migration" },
+                { day: "Day 10", label: "Testing" },
+                { day: "Day 14", label: "Live" },
+              ].map((item, index, arr) => (
+                <div key={item.day} className="flex items-center gap-3 sm:gap-4">
+                  <div className="text-center">
+                    <div className="w-12 h-12 rounded-full bg-emerald-100 flex items-center justify-center mb-1">
+                      <span className="text-xs font-bold text-emerald-700">{item.day}</span>
+                    </div>
+                    <span className="text-xs text-gray-600">{item.label}</span>
                   </div>
-                  <div className="flex-shrink-0">
-                    <div className="w-3 h-3 rounded-full bg-emerald-500 mt-1.5" />
-                  </div>
-                  <div className="flex-1 pb-6 border-b border-gray-200 last:border-0">
-                    <h3 className="font-semibold text-gray-900">{item.title}</h3>
-                    <p className="text-gray-600 text-sm">{item.desc}</p>
-                  </div>
+                  {index < arr.length - 1 && (
+                    <div className="hidden sm:block w-8 lg:w-12 h-0.5 bg-emerald-200" />
+                  )}
                 </div>
               ))}
             </div>
@@ -122,8 +135,8 @@ export default function OnboardingProcessPage() {
         </section>
 
         {/* CTA */}
-        <section className="section-padding bg-slate-900">
-          <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <section className="py-16 bg-slate-900">
+          <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="text-2xl font-bold text-white mb-4">Ready to get started?</h2>
             <p className="text-slate-400 mb-8">
               No forms. Just reach out and we&apos;ll get your onboarding scheduled.
