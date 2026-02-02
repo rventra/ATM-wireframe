@@ -3,13 +3,13 @@ import { Shield, Phone, Mail, MapPin } from "lucide-react";
 
 const footerLinks = {
   services: [
-    { label: "Processing Migration", href: "/how-it-works" },
+    { label: "Processing Migration", href: "/onboarding-process" },
     { label: "Equipment", href: "/equipment" },
-    { label: "Full-Service Management", href: "/how-it-works" },
+    { label: "Full-Service Management", href: "/onboarding-process" },
   ],
   company: [
     { label: "About Us", href: "/about" },
-    { label: "How It Works", href: "/how-it-works" },
+    { label: "Onboarding Process", href: "/onboarding-process" },
     { label: "Equipment", href: "/equipment" },
     { label: "FAQ", href: "/faq" },
   ],

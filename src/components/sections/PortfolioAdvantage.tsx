@@ -5,9 +5,9 @@ import { TrendingUp, Shield, Clock, Users, ArrowRight } from "lucide-react";
 import Link from "next/link";
 
 const stats = [
-  { label: "Monthly Transactions", value: "$50M+", icon: TrendingUp },
-  { label: "Network Uptime", value: "99.9%", icon: Clock },
-  { label: "Partner Operators", value: "200+", icon: Users },
+  { label: "Processing Volume", value: "Wholesale", icon: TrendingUp },
+  { label: "Network Uptime", value: "Reliable", icon: Clock },
+  { label: "Partner Network", value: "Growing", icon: Users },
   { label: "PAI Authorized", value: "ISO", icon: Shield },
 ];
 
@@ -40,13 +40,13 @@ export default function PortfolioAdvantage() {
               more of every surcharge.
             </p>
 
-            {/* How It Works Link */}
+            {/* Onboarding Process Link */}
             <div className="mb-8">
               <Link
-                href="#how-it-works"
+                href="/onboarding-process"
                 className="inline-flex items-center text-green-600 font-semibold hover:text-green-700 transition-colors group"
               >
-                How It Works
+                Onboarding Process
                 <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
             </div>

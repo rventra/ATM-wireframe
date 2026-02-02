@@ -5,10 +5,9 @@ import Link from "next/link";
 import { Menu, X, Phone } from "lucide-react";
 
 const navLinks = [
-  { href: "/how-it-works", label: "How It Works" },
-  { href: "/equipment", label: "Equipment" },
-  { href: "/resources", label: "Resources" },
-  { href: "/contact", label: "Contact" },
+  { href: "/onboarding-process", label: "Onboarding Process" },
+  { href: "/#partnership-levels", label: "Partnership Levels" },
+  { href: "/#why-cashready", label: "Why CashReady" },
 ];
 
 export default function Navigation() {
