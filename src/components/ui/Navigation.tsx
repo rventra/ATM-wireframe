@@ -4,12 +4,6 @@ import { useState } from "react";
 import Link from "next/link";
 import { Menu, X, Phone } from "lucide-react";
 
-const navLinks = [
-  { href: "/onboarding-process", label: "Onboarding Process" },
-  { href: "/#partnership-levels", label: "Partnership Levels" },
-  { href: "/#why-cashready", label: "Why CashReady" },
-];
-
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -29,15 +23,12 @@ export default function Navigation() {
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-8">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="text-gray-600 hover:text-green-600 font-medium transition-colors"
-              >
-                {link.label}
-              </Link>
-            ))}
+            <Link
+              href="/onboarding-process"
+              className="inline-flex items-center px-4 py-2 text-sm font-semibold text-green-700 bg-green-50 border border-green-200 rounded-lg hover:bg-green-100 transition-colors"
+            >
+              Onboarding Process
+            </Link>
           </div>
 
           {/* Desktop CTA */}
@@ -72,16 +63,13 @@ export default function Navigation() {
       {isOpen && (
         <div className="lg:hidden bg-white border-t border-gray-100">
           <div className="px-4 pt-2 pb-6 space-y-1">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="block px-3 py-3 text-base font-medium text-gray-600 hover:text-green-600 hover:bg-gray-50 rounded-md"
-                onClick={() => setIsOpen(false)}
-              >
-                {link.label}
-              </Link>
-            ))}
+            <Link
+              href="/onboarding-process"
+              className="block px-3 py-3 text-base font-medium text-green-700 bg-green-50 rounded-md"
+              onClick={() => setIsOpen(false)}
+            >
+              Onboarding Process
+            </Link>
             <div className="pt-4 space-y-3">
               <a
                 href="tel:+1-XXX-XXX-XXXX"
