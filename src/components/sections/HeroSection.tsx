@@ -130,18 +130,18 @@ export default function HeroSection() {
             <p className="text-sm text-slate-500 mb-4">Trusted by ATM operators across the US</p>
             <div className="flex items-center justify-center gap-8 text-slate-400">
               <div>
-                <div className="text-2xl font-bold text-white">$50M+</div>
-                <div className="text-sm">Monthly transactions</div>
+                <div className="text-2xl font-bold text-white">Wholesale</div>
+                <div className="text-sm">Processing rates</div>
               </div>
               <div className="w-px h-10 bg-slate-800" />
               <div>
-                <div className="text-2xl font-bold text-white">$0.20</div>
-                <div className="text-sm">Per transaction fee</div>
+                <div className="text-2xl font-bold text-white">Direct</div>
+                <div className="text-sm">Partner support</div>
               </div>
               <div className="w-px h-10 bg-slate-800 hidden sm:block" />
               <div className="hidden sm:block">
-                <div className="text-2xl font-bold text-white">&lt;15 min</div>
-                <div className="text-sm">Average support response</div>
+                <div className="text-2xl font-bold text-white">PAI</div>
+                <div className="text-sm">Authorized ISO</div>
               </div>
             </div>
           </motion.div>
