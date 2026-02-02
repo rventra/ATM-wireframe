@@ -113,10 +113,10 @@ export default function HeroSection() {
               View Equipment
             </Link>
             <Link
-              href="#why-cashready"
+              href="#testimonials"
               className="inline-flex items-center justify-center px-5 py-2.5 text-sm font-bold text-emerald-400 border-2 border-emerald-500/40 rounded-lg transition-all duration-200 hover:bg-emerald-500/10"
             >
-              Why CashReady
+              Testimonials
             </Link>
           </motion.div>
 

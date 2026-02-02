@@ -261,7 +261,7 @@ export default function Home() {
         <ServiceTiers />
 
         {/* Testimonials Section */}
-        <section className="section-padding bg-slate-900 relative overflow-hidden">
+        <section id="testimonials" className="section-padding bg-slate-900 relative overflow-hidden">
           {/* Background decoration */}
           <div className="absolute inset-0 opacity-10" style={{
             backgroundImage: `radial-gradient(circle at 20% 50%, rgba(52, 211, 153, 0.3) 0%, transparent 40%),
