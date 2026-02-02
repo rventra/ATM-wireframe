@@ -101,7 +101,7 @@ export default function HeroSection() {
               <ArrowRight className="ml-2 w-4 h-4" />
             </Link>
             <Link
-              href="/partnership"
+              href="#partnership-levels"
               className="inline-flex items-center justify-center px-5 py-2.5 text-sm font-bold text-white border-2 border-white/30 rounded-lg transition-all duration-200 hover:bg-white/10"
             >
               Partnership Levels

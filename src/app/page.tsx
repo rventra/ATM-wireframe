@@ -1,7 +1,6 @@
 import Navigation from "@/components/ui/Navigation";
 import Footer from "@/components/ui/Footer";
 import HeroSection from "@/components/sections/HeroSection";
-import ROICalculator from "@/components/sections/ROICalculator";
 import ServiceTiers from "@/components/sections/ServiceTiers";
 import DailyOversight from "@/components/sections/DailyOversight";
 import LeadCapture from "@/components/sections/LeadCapture";
@@ -144,7 +143,6 @@ export default function Home() {
           </div>
         </section>
 
-        <ROICalculator />
         <ServiceTiers />
         <DailyOversight />
         <LeadCapture />

@@ -52,7 +52,7 @@ const services = [
 
 export default function ServiceTiers() {
   return (
-    <section className="section-padding bg-white">
+    <section id="partnership-levels" className="section-padding bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
