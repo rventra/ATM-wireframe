@@ -48,7 +48,7 @@ const quickLinks = [
   { label: "Terminal Programming Guide", href: "#" },
   { label: "Settlement Schedule", href: "#" },
   { label: "Equipment Specifications", href: "/equipment" },
-  { label: "Service Area Map", href: "/how-it-works" },
+  { label: "Service Area Map", href: "/onboarding-process" },
   { label: "Contact Sales", href: "/contact" },
 ];
 
