@@ -15,8 +15,6 @@ const services = [
       "Same-day processing switch",
       "Better backend rates",
     ],
-    cta: "Contact Us",
-    href: "mailto:sales and service at cashreadyatm.com",
     popular: false,
   },
   {
@@ -43,8 +41,6 @@ const services = [
       "Strategic placement optimization",
       "Commission-based earnings",
     ],
-    cta: "Check Availability",
-    href: "mailto:sales and service at cashreadyatm.com",
     popular: false,
     badge: "GA / FL Only",
   },
@@ -143,18 +139,16 @@ export default function ServiceTiers() {
                 ))}
               </ul>
 
-              {/* CTA */}
-              <Link
-                href={service.href}
-                className={`w-full inline-flex items-center justify-center px-6 py-3 rounded-lg font-semibold transition-all duration-200 ${
-                  service.popular
-                    ? "bg-green-600 text-white hover:bg-green-700 hover:shadow-lg"
-                    : "bg-gray-100 text-gray-900 hover:bg-gray-200"
-                }`}
-              >
-                {service.cta}
-                <ArrowRight className="ml-2 w-4 h-4" />
-              </Link>
+              {/* CTA - only show for Equipment card */}
+              {service.popular && service.href && (
+                <Link
+                  href={service.href}
+                  className="w-full inline-flex items-center justify-center px-6 py-3 rounded-lg font-semibold transition-all duration-200 bg-green-600 text-white hover:bg-green-700 hover:shadow-lg"
+                >
+                  {service.cta}
+                  <ArrowRight className="ml-2 w-4 h-4" />
+                </Link>
+              )}
             </motion.div>
           ))}
         </div>

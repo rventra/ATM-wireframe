@@ -23,12 +23,6 @@ export default function Navigation() {
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-8">
-            <Link
-              href="/onboarding-process"
-              className="inline-flex items-center px-4 py-2 text-sm font-semibold text-green-700 bg-green-50 border border-green-200 rounded-lg hover:bg-green-100 transition-colors"
-            >
-              Onboarding Process
-            </Link>
           </div>
 
           {/* Desktop CTA */}
@@ -61,30 +55,14 @@ export default function Navigation() {
       {/* Mobile menu */}
       {isOpen && (
         <div className="lg:hidden bg-white border-t border-gray-100">
-          <div className="px-4 pt-2 pb-6 space-y-1">
+          <div className="px-4 pt-2 pb-6 space-y-3">
             <Link
-              href="/onboarding-process"
-              className="block px-3 py-3 text-base font-medium text-green-700 bg-green-50 rounded-md"
+              href="/contact"
+              className="flex items-center justify-center px-6 py-3 text-sm font-semibold text-white bg-green-600 rounded-lg transition-all duration-200 hover:bg-green-700"
               onClick={() => setIsOpen(false)}
             >
-              Onboarding Process
+              Contact Us
             </Link>
-            <div className="pt-4 space-y-3">
-              <Link
-                href="/onboarding-process"
-                className="flex items-center justify-center px-3 py-3 text-base font-medium text-green-600 bg-green-50 rounded-md"
-                onClick={() => setIsOpen(false)}
-              >
-                Onboarding Process
-              </Link>
-              <Link
-                href="/contact"
-                className="flex items-center justify-center px-6 py-3 text-sm font-semibold text-white bg-green-600 rounded-lg transition-all duration-200 hover:bg-green-700"
-                onClick={() => setIsOpen(false)}
-              >
-                Contact Us
-              </Link>
-            </div>
           </div>
         </div>
       )}
