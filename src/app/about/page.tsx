@@ -4,8 +4,8 @@ import Footer from "@/components/ui/Footer";
 import { Shield, Users, TrendingUp, Award, Check } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "About Us | CashReady ATM | PAI Authorized ISO",
-  description: "Learn about CashReady ATM, a PAI Authorized Independent Sales Organization providing wholesale processing rates to ATM operators.",
+  title: "About Us | CashReady ATM | Authorized ISO",
+  description: "Learn about CashReady ATM, an Authorized Independent Sales Organization providing wholesale processing rates to ATM operators.",
 };
 
 const values = [
@@ -32,7 +32,7 @@ const values = [
 ];
 
 const credentials = [
-  "PAI Authorized Independent Sales Organization",
+  "Authorized Independent Sales Organization",
   "PCI DSS Compliant Processing",
   "Licensed in Georgia and Florida",
   "Bonded and insured",
@@ -79,7 +79,7 @@ export default function AboutPage() {
                   </p>
                   <p>
                     We set out to change that. By aggregating transaction volume across our network
-                    of operators, we secured institutional PAI processing rates—and passed those
+                    of operators, we secured institutional backend rates—and passed those
                     savings directly to our partners.
                   </p>
                   <p>
@@ -144,7 +144,7 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* PAI Partnership */}
+        {/* Partnership */}
         <section className="section-padding bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -153,12 +153,11 @@ export default function AboutPage() {
                   Our Partner
                 </span>
                 <h2 className="heading-md text-gray-900 mt-3 mb-6">
-                  PAI Authorized ISO
+                  Authorized ISO Partner
                 </h2>
                 <p className="text-body mb-6">
-                  CashReady ATM is an authorized Independent Sales Organization for Payment
-                  Alliance International (PAI), one of the nation&apos;s largest ATM processors.
-                  This partnership enables us to offer institutional-grade processing with the
+                  CashReady ATM is an authorized Independent Sales Organization with established
+                  processing partnerships, enabling us to offer institutional-grade processing with the
                   personal touch of a boutique ISO.
                 </p>
                 <ul className="space-y-3">
@@ -176,12 +175,12 @@ export default function AboutPage() {
                     <div className="w-20 h-20 bg-green-600 rounded-xl flex items-center justify-center mx-auto mb-4">
                       <Shield className="w-10 h-10 text-white" />
                     </div>
-                    <p className="text-gray-900 font-bold">PAI Authorized Partner</p>
+                    <p className="text-gray-900 font-bold">Authorized ISO Partner</p>
                     <p className="text-gray-500 text-sm">ISO Certification</p>
                   </div>
                 </div>
                 <p className="text-sm text-gray-500 text-center">
-                  CashReady ATM is proud to be a PAI Authorized ISO partner
+                  CashReady ATM is proud to be an authorized ISO partner
                 </p>
               </div>
             </div>

@@ -15,8 +15,8 @@ const supportOptions = [
     title: "Technical Support",
     description: "Having issues with your terminal or processing? Our technical team is available to help diagnose and resolve problems.",
     action: "Call Support",
-    href: "tel:+1-XXX-XXX-XXXX",
-    details: "Available 24/7 for emergencies",
+    href: "tel:+1-706-495-2255",
+    details: "Available 24/6 (closed Sundays)",
   },
   {
     icon: Wrench,
@@ -163,14 +163,14 @@ export default function SupportPage() {
             <h2 className="heading-md text-gray-900 mb-4">Emergency Support</h2>
             <p className="text-gray-600 mb-8">
               Experiencing a critical issue? Our emergency support line is available
-              24/7 for partners.
+              24/6 for partners (closed Sundays).
             </p>
             <a
-              href="tel:+1-XXX-XXX-XXXX"
+              href="tel:+1-706-495-2255"
               className="inline-flex items-center px-8 py-4 bg-red-600 text-white font-semibold rounded-lg hover:bg-red-700 transition-colors"
             >
               <Phone className="w-5 h-5 mr-2" />
-              Emergency: (XXX) XXX-XXXX
+              Emergency: 706-495-2255
             </a>
           </div>
         </section>

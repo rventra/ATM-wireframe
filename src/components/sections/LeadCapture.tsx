@@ -27,7 +27,7 @@ export default function LeadCapture() {
             {/* Contact Methods */}
             <div className="grid sm:grid-cols-3 gap-6">
               <motion.a
-                href="mailto:info@cashreadyatm.com"
+                href="mailto:sales and service at cashreadyatm.com"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -38,11 +38,11 @@ export default function LeadCapture() {
                   <Mail className="w-7 h-7 text-green-600 group-hover:text-white transition-colors" />
                 </div>
                 <p className="font-semibold text-gray-900 mb-1">Email Us</p>
-                <p className="text-sm text-green-600">info@cashreadyatm.com</p>
+                <p className="text-sm text-green-600">sales and service at cashreadyatm.com</p>
               </motion.a>
 
               <motion.a
-                href="tel:+1-XXX-XXX-XXXX"
+                href="tel:+1-706-495-2255"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -53,7 +53,7 @@ export default function LeadCapture() {
                   <Phone className="w-7 h-7 text-green-600 group-hover:text-white transition-colors" />
                 </div>
                 <p className="font-semibold text-gray-900 mb-1">Call Us</p>
-                <p className="text-sm text-green-600">(XXX) XXX-XXXX</p>
+                <p className="text-sm text-green-600">706-495-2255</p>
               </motion.a>
 
               <motion.div

@@ -21,16 +21,16 @@ const corporateFeatures = [
 const cashReadyFeatures = [
   { label: "Direct phone line", available: true },
   { label: "Real-time troubleshooting", available: true },
-  { label: "Same-day resolution", available: true },
+  { label: "24-hour resolution", available: true },
   { label: "Dedicated account manager", available: true },
   { label: "Daily oversight reports", available: true },
 ];
 
 const highlights = [
-  { icon: TrendingUp, label: "Wholesale Processing Rates", description: "Access institutional rates through our PAI partnership" },
-  { icon: Shield, label: "Reliable Network Uptime", description: "Built on PAI's established infrastructure" },
+  { icon: TrendingUp, label: "Wholesale Processing Rates", description: "Access better backend rates through our ISO partnership" },
+  { icon: Shield, label: "Reliable Network Uptime", description: "Built on established processing infrastructure" },
   { icon: Users, label: "Growing Partner Network", description: "Join hundreds of ATM operators nationwide" },
-  { icon: Award, label: "PAI Authorized ISO", description: "Fully authorized Independent Sales Organization" },
+  { icon: Award, label: "Authorized ISO Partner", description: "Fully authorized Independent Sales Organization" },
 ];
 
 export default function Home() {
@@ -61,7 +61,7 @@ export default function Home() {
                 Keep More of Every Transaction
               </h2>
               <p className="text-body max-w-2xl mx-auto">
-                Through volume arbitrage and wholesale PAI rates, we ensure you retain significantly more of every surcharge while maintaining premium service standards.
+                Through volume arbitrage and better backend rates, we ensure you retain significantly more of every surcharge while maintaining premium service standards.
               </p>
             </div>
 
@@ -73,10 +73,10 @@ export default function Home() {
                   Volume Arbitrage Through Scale
                 </h3>
                 <p className="text-body mb-4">
-                  As an Independent Sales Organization (ISO), we aggregate transaction volume from hundreds of ATM operators. This collective buying power unlocks wholesale PAI processing rates that individual operators cannot access on their own.
+                  As an Independent Sales Organization (ISO), we aggregate transaction volume from hundreds of ATM operators. This collective buying power unlocks wholesale backend rates that individual operators cannot access on their own.
                 </p>
                 <p className="text-body mb-6">
-                  Our core arbitrage is simple: we secure institutional rates and pass the savings to you. While retail ISOs charge premium processing fees, our partners keep significantly more of every surcharge.
+                  Interested in better interchange rates? Our core arbitrage is simple: we secure institutional rates and pass the savings to you. If you&apos;re not happy with your current processor, give us a call.
                 </p>
 
                 {/* Highlights (no specific numbers) */}

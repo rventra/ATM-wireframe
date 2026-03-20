@@ -4,8 +4,8 @@ import Footer from "@/components/ui/Footer";
 import { Check, Phone, Mail, ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Onboarding Process | CashReady ATM Processing | PAI Partner",
-  description: "Simple 3-step onboarding process to get you up and running with wholesale PAI processing rates within two weeks.",
+  title: "Onboarding Process | CashReady ATM Processing",
+  description: "Simple 3-step onboarding process to get you up and running with wholesale processing rates within two weeks.",
 };
 
 const steps = [
@@ -25,7 +25,7 @@ const steps = [
     subtitle: "Technical Setup",
     items: [
       "Terminal reconfiguration",
-      "PAI backend setup",
+      "Backend setup",
       "Same-day transition",
     ],
   },
@@ -143,14 +143,14 @@ export default function OnboardingProcessPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="mailto:info@cashreadyatm.com"
+                href="mailto:sales and service at cashreadyatm.com"
                 className="inline-flex items-center justify-center px-6 py-3 bg-emerald-500 text-slate-900 font-semibold rounded-lg hover:bg-emerald-400 transition-colors"
               >
                 <Mail className="w-5 h-5 mr-2" />
                 Email Us
               </a>
               <a
-                href="tel:+1-XXX-XXX-XXXX"
+                href="tel:+1-706-495-2255"
                 className="inline-flex items-center justify-center px-6 py-3 text-white border border-white/30 rounded-lg hover:bg-white/10 transition-colors font-semibold"
               >
                 <Phone className="w-5 h-5 mr-2" />
