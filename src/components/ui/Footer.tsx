@@ -14,7 +14,7 @@ const footerLinks = {
     { label: "FAQ", href: "/faq" },
   ],
   support: [
-    { label: "Contact Us", href: "mailto:sales and service at cashreadyatm.com" },
+    { label: "Contact Us", href: "mailto:mike@cashreadyatm.com" },
     { label: "Technical Support", href: "/support" },
     { label: "Maintenance Request", href: "/support" },
   ],
@@ -71,9 +71,9 @@ export default function Footer() {
                 <Phone className="w-4 h-4 mr-2" />
                 706-495-2255
               </a>
-              <a href="mailto:sales and service at cashreadyatm.com" className="flex items-center hover:text-green-500 transition-colors">
+              <a href="mailto:mike@cashreadyatm.com" className="flex items-center hover:text-green-500 transition-colors">
                 <Mail className="w-4 h-4 mr-2" />
-                sales and service at cashreadyatm.com
+                mike@cashreadyatm.com
               </a>
               <div className="flex items-start">
                 <MapPin className="w-4 h-4 mr-2 mt-0.5" />

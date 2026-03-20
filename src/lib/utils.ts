@@ -54,7 +54,7 @@ export function generateLocalBusinessSchema() {
     description: "ATM Independent Sales Organization providing wholesale processing rates to ATM operators",
     url: "https://cashreadyatm.com",
     telephone: "+1-706-495-2255",
-    email: "sales and service at cashreadyatm.com",
+    email: "mike@cashreadyatm.com",
     areaServed: ["Georgia", "Florida"],
     serviceType: ["ATM Processing", "ATM Equipment Sales", "ATM Management Services"],
     knowsAbout: ["ATM ISO services", "ATM processing", "wholesale ATM rates"],
