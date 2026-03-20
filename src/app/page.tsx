@@ -22,7 +22,6 @@ const cashReadyFeatures = [
   { label: "Direct phone line", available: true },
   { label: "Real-time troubleshooting", available: true },
   { label: "24-hour resolution", available: true },
-  { label: "Dedicated account manager", available: true },
   { label: "Daily oversight reports", available: true },
 ];
 
