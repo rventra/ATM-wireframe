@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { Menu, X, Phone } from "lucide-react";
+import { Menu, X } from "lucide-react";
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
@@ -33,19 +33,18 @@ export default function Navigation() {
 
           {/* Desktop CTA */}
           <div className="hidden lg:flex items-center space-x-4">
-            <a
-              href="tel:+1-706-495-2255"
+            <Link
+              href="/onboarding-process"
               className="flex items-center text-gray-600 hover:text-green-600 font-medium transition-colors"
             >
-              <Phone className="w-4 h-4 mr-2" />
-              <span>Call Us</span>
-            </a>
-            <a
-              href="mailto:sales and service at cashreadyatm.com"
+              <span>Onboarding Process</span>
+            </Link>
+            <Link
+              href="/contact"
               className="inline-flex items-center justify-center px-6 py-3 text-sm font-semibold text-white bg-green-600 rounded-lg transition-all duration-200 hover:bg-green-700 hover:shadow-lg hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
             >
               Contact Us
-            </a>
+            </Link>
           </div>
 
           {/* Mobile menu button */}
@@ -71,20 +70,20 @@ export default function Navigation() {
               Onboarding Process
             </Link>
             <div className="pt-4 space-y-3">
-              <a
-                href="tel:+1-706-495-2255"
+              <Link
+                href="/onboarding-process"
                 className="flex items-center justify-center px-3 py-3 text-base font-medium text-green-600 bg-green-50 rounded-md"
+                onClick={() => setIsOpen(false)}
               >
-                <Phone className="w-4 h-4 mr-2" />
-                Call Now
-              </a>
-              <a
-                href="mailto:sales and service at cashreadyatm.com"
+                Onboarding Process
+              </Link>
+              <Link
+                href="/contact"
                 className="flex items-center justify-center px-6 py-3 text-sm font-semibold text-white bg-green-600 rounded-lg transition-all duration-200 hover:bg-green-700"
                 onClick={() => setIsOpen(false)}
               >
                 Contact Us
-              </a>
+              </Link>
             </div>
           </div>
         </div>
