@@ -8,7 +8,7 @@ import LeadCapture from "@/components/sections/LeadCapture";
 import Script from "next/script";
 import { generateLocalBusinessSchema } from "@/lib/utils";
 import { motion } from "framer-motion";
-import { X, Check, Phone, User, Clock, TrendingUp, Shield, Users, Award } from "lucide-react";
+import { X, Check, Phone, User, TrendingUp, Shield, Users, Award } from "lucide-react";
 
 const corporateFeatures = [
   { label: "Call center support", available: false },
@@ -242,17 +242,6 @@ export default function Home() {
               </div>
 
               {/* Bottom CTA */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                className="text-center mt-12"
-              >
-                <div className="inline-flex items-center space-x-2 bg-white rounded-full px-6 py-3 border border-gray-200 shadow-sm">
-                  <Clock className="w-5 h-5 text-green-600" />
-                  <span className="text-gray-700">Average response time: Under 15 minutes</span>
-                </div>
-              </motion.div>
             </div>
           </div>
         </section>
