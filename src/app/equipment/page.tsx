@@ -121,7 +121,7 @@ export default function EquipmentPage() {
                 We don&apos;t do forms. Call or email us directly.
               </p>
               <Link
-                href="mailto:sales and service at cashreadyatm.com"
+                href="mailto:mike@cashreadyatm.com"
                 className="inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-white bg-green-600 rounded-lg transition-all duration-200 hover:bg-green-700 hover:shadow-lg"
               >
                 <Mail className="mr-2 w-5 h-5" />

@@ -20,8 +20,8 @@ const contactMethods = [
   {
     icon: Mail,
     title: "Email",
-    value: "sales and service at cashreadyatm.com",
-    href: "mailto:sales and service at cashreadyatm.com",
+    value: "mike@cashreadyatm.com",
+    href: "mailto:mike@cashreadyatm.com",
     description: "We reply within 24 hours",
   },
   {

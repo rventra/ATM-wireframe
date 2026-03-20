@@ -25,9 +25,22 @@ export default function ContactForm() {
     setIsSubmitting(true);
 
     try {
-      // TODO: Integrate with backend/HubSpot
-      await new Promise((resolve) => setTimeout(resolve, 1500));
-      console.log("Form submitted:", data);
+      // Submit to Formsubmit (forwards to mike@cashreadyatm.com)
+      const formData = new FormData();
+      formData.append("name", data.name);
+      formData.append("email", data.email);
+      formData.append("phone", data.phone || "");
+      formData.append("subject", data.subject);
+      formData.append("message", data.message);
+      formData.append("_subject", `CashReady ATM Contact: ${data.subject}`);
+      formData.append("_to", "mike@cashreadyatm.com");
+      formData.append("_cc", "");
+
+      await fetch("https://formsubmit.co/ajax/mike@cashreadyatm.com", {
+        method: "POST",
+        body: formData,
+      });
+
       setIsSubmitted(true);
     } catch (error) {
       console.error("Form submission error:", error);
@@ -42,7 +55,7 @@ export default function ContactForm() {
         <CheckCircle className="w-16 h-16 text-green-600 mx-auto mb-4" />
         <h3 className="text-2xl font-bold text-gray-900 mb-2">Message Sent!</h3>
         <p className="text-gray-600">
-          Thank you for reaching out. We'll get back to you within 24 hours.
+          Thank you for reaching out. Mike will get back to you soon.
         </p>
       </div>
     );
