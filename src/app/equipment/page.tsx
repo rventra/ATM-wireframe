@@ -11,9 +11,9 @@ export const metadata: Metadata = {
 
 const equipment = [
   {
-    name: "Genmega GT3000",
-    description: "Buy at wholesale pricing. Workhorse terminal for high-traffic locations.",
-    image: "/api/placeholder/400/320",
+    name: "Genmega G2500",
+    description: "Workhorse terminal for high-traffic locations. Buy at wholesale pricing.",
+    image: "https://i.ebayimg.com/images/g/V7gAAOSwjkJh9dC~/s-l500.jpg",
     specs: [
       "15-inch touchscreen",
       "High-capacity cash dispenser",
@@ -24,7 +24,7 @@ const equipment = [
   {
     name: "Hyosung Halo II",
     description: "Sleek design, reliable processing. Bundle with our backend for best rates.",
-    image: "/api/placeholder/400/320",
+    image: "https://i.ebayimg.com/images/g/X7oAAOSwJiJn0aNf/s-l500.jpg",
     specs: [
       "Compact footprint",
       "LED lighting",
@@ -35,7 +35,7 @@ const equipment = [
   {
     name: "Hyosung Force",
     description: "Outdoor rated, weatherproof. Direct support included.",
-    image: "/api/placeholder/400/320",
+    image: "https://i.ebayimg.com/images/g/BYgAAOSwHt9eVDns/s-l500.jpg",
     specs: [
       "Weather-resistant casing",
       "Anti-glare display",
@@ -76,9 +76,13 @@ export default function EquipmentPage() {
                   key={item.name}
                   className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-lg transition-shadow"
                 >
-                  {/* Image Placeholder */}
-                  <div className="aspect-[4/3] bg-gradient-to-br from-gray-800 to-gray-900 flex items-center justify-center">
-                    <span className="text-gray-500 text-sm">{item.name}</span>
+                  {/* Image */}
+                  <div className="aspect-[4/3] bg-gray-100 flex items-center justify-center overflow-hidden">
+                    <img
+                      src={item.image}
+                      alt={item.name}
+                      className="w-full h-full object-cover"
+                    />
                   </div>
 
                   <div className="p-6">
