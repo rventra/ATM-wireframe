@@ -38,7 +38,7 @@ export default function HeroSection() {
           >
             <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
             <span className="text-sm text-emerald-400 font-medium">
-              PAI Authorized ISO Partner
+              Authorized ISO Partner
             </span>
           </motion.div>
 
@@ -59,7 +59,7 @@ export default function HeroSection() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="text-lg sm:text-xl text-slate-400 leading-relaxed mb-8 max-w-2xl mx-auto"
           >
-            Access institutional processing rates through our PAI partnership. 
+            Access better backend rates through our ISO partnership.
             Lower fees per transaction, direct support, no call centers.
           </motion.p>
 
@@ -140,8 +140,8 @@ export default function HeroSection() {
               </div>
               <div className="w-px h-10 bg-slate-800 hidden sm:block" />
               <div className="hidden sm:block">
-                <div className="text-2xl font-bold text-white">PAI</div>
-                <div className="text-sm">Authorized ISO</div>
+                <div className="text-2xl font-bold text-white">ISO</div>
+                <div className="text-sm">Authorized Partner</div>
               </div>
             </div>
           </motion.div>

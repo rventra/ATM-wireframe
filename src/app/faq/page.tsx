@@ -15,7 +15,7 @@ const faqs = [
     items: [
       {
         question: "What are your processing rates?",
-        answer: "Our wholesale processing rate is $0.20 per transaction—significantly lower than the $0.40-$0.60 typical retail ISOs charge. This means you keep $0.20-$0.40 more of every surcharge. Exact savings depend on your current rate structure.",
+        answer: "Our wholesale processing rate is significantly lower than typical retail ISOs charge. This means you keep significantly more of every surcharge. Exact savings depend on your current rate structure—contact us for a personalized analysis.",
       },
       {
         question: "Are there any monthly fees or minimums?",
@@ -177,10 +177,10 @@ export default function FAQPage() {
                 Contact Us
               </a>
               <a
-                href="tel:+1-XXX-XXX-XXXX"
+                href="tel:+1-706-495-2255"
                 className="inline-flex items-center justify-center px-6 py-3 border-2 border-gray-300 text-gray-700 font-semibold rounded-lg hover:border-green-500 hover:text-green-600 transition-colors"
               >
-                Call (XXX) XXX-XXXX
+                Call 706-495-2255
               </a>
             </div>
           </div>

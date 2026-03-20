@@ -14,7 +14,7 @@ const footerLinks = {
     { label: "FAQ", href: "/faq" },
   ],
   support: [
-    { label: "Contact Us", href: "mailto:info@cashreadyatm.com" },
+    { label: "Contact Us", href: "mailto:sales and service at cashreadyatm.com" },
     { label: "Technical Support", href: "/support" },
     { label: "Maintenance Request", href: "/support" },
   ],
@@ -34,7 +34,7 @@ export default function Footer() {
           <div className="flex flex-wrap items-center justify-center gap-6 text-sm">
             <div className="flex items-center">
               <Shield className="w-5 h-5 text-green-500 mr-2" />
-              <span>PAI Authorized Partner</span>
+              <span>Authorized ISO Partner</span>
             </div>
             <div className="hidden sm:block w-px h-4 bg-gray-700" />
             <div className="flex items-center">
@@ -64,16 +64,16 @@ export default function Footer() {
               </span>
             </Link>
             <p className="text-sm text-gray-400 mb-4 max-w-xs">
-              Wholesale ATM processing for independent operators. Access institutional rates through our PAI partnership.
+              Wholesale ATM processing for independent operators. Access institutional rates through our ISO partnership.
             </p>
             <div className="space-y-2 text-sm">
-              <a href="tel:+1-XXX-XXX-XXXX" className="flex items-center hover:text-green-500 transition-colors">
+              <a href="tel:+1-706-495-2255" className="flex items-center hover:text-green-500 transition-colors">
                 <Phone className="w-4 h-4 mr-2" />
-                +1 (XXX) XXX-XXXX
+                706-495-2255
               </a>
-              <a href="mailto:info@cashreadyatm.com" className="flex items-center hover:text-green-500 transition-colors">
+              <a href="mailto:sales and service at cashreadyatm.com" className="flex items-center hover:text-green-500 transition-colors">
                 <Mail className="w-4 h-4 mr-2" />
-                info@cashreadyatm.com
+                sales and service at cashreadyatm.com
               </a>
               <div className="flex items-start">
                 <MapPin className="w-4 h-4 mr-2 mt-0.5" />
@@ -146,7 +146,7 @@ export default function Footer() {
           <div className="flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
             <p>&copy; {new Date().getFullYear()} CashReady ATM. All rights reserved.</p>
             <p className="mt-2 md:mt-0">
-              A PAI Authorized Independent Sales Organization
+              An Authorized Independent Sales Organization
             </p>
           </div>
         </div>

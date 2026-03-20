@@ -59,6 +59,11 @@ export default function EquipmentPage() {
             <p className="text-lg text-gray-600 max-w-2xl">
               Buy at wholesale rates. No forms, no hassle—just call or email for pricing.
             </p>
+            <div className="mt-4 inline-flex items-center bg-green-50 border border-green-200 rounded-lg px-4 py-2">
+              <span className="text-sm text-green-800 font-medium">
+                Currently deploying: <strong>Gen Mega 2500</strong> and <strong>Hyosung Force</strong>
+              </span>
+            </div>
           </div>
         </section>
 
@@ -112,7 +117,7 @@ export default function EquipmentPage() {
                 We don&apos;t do forms. Call or email us directly.
               </p>
               <Link
-                href="mailto:info@cashreadyatm.com"
+                href="mailto:sales and service at cashreadyatm.com"
                 className="inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-white bg-green-600 rounded-lg transition-all duration-200 hover:bg-green-700 hover:shadow-lg"
               >
                 <Mail className="mr-2 w-5 h-5" />

@@ -13,15 +13,15 @@ const contactMethods = [
   {
     icon: Phone,
     title: "Phone",
-    value: "(XXX) XXX-XXXX",
-    href: "tel:+1-XXX-XXX-XXXX",
-    description: "Mon-Fri 8am-6pm EST",
+    value: "706-495-2255",
+    href: "tel:+1-706-495-2255",
+    description: "Mike O'Grady - Direct",
   },
   {
     icon: Mail,
     title: "Email",
-    value: "info@cashreadyatm.com",
-    href: "mailto:info@cashreadyatm.com",
+    value: "sales and service at cashreadyatm.com",
+    href: "mailto:sales and service at cashreadyatm.com",
     description: "We reply within 24 hours",
   },
   {
@@ -33,8 +33,8 @@ const contactMethods = [
   {
     icon: Clock,
     title: "Support Hours",
-    value: "24/7 for emergencies",
-    description: "Business hours for sales",
+    value: "24/6 support",
+    description: "Closed Sundays",
   },
 ];
 

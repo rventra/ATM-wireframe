@@ -8,7 +8,7 @@ const stats = [
   { label: "Processing Volume", value: "Wholesale", icon: TrendingUp },
   { label: "Network Uptime", value: "Reliable", icon: Clock },
   { label: "Partner Network", value: "Growing", icon: Users },
-  { label: "PAI Authorized", value: "ISO", icon: Shield },
+  { label: "Authorized ISO", value: "Partner", icon: Shield },
 ];
 
 export default function PortfolioAdvantage() {
@@ -31,12 +31,12 @@ export default function PortfolioAdvantage() {
             </h2>
             <p className="text-body mb-6">
               As an Independent Sales Organization (ISO), we aggregate transaction volume from
-              hundreds of ATM operators. This collective buying power unlocks wholesale PAI
-              processing rates that individual operators cannot access on their own.
+              hundreds of ATM operators. This collective buying power unlocks wholesale backend
+              rates that individual operators cannot access on their own.
             </p>
             <p className="text-body mb-4">
               Our core arbitrage is simple: we secure institutional rates and pass the savings to
-              you. While retail ISOs charge $0.50 per transaction, our partners keep significantly
+              you. While retail ISOs charge higher fees, our partners keep significantly
               more of every surcharge.
             </p>
 
@@ -91,7 +91,7 @@ export default function PortfolioAdvantage() {
               <div className="mb-6">
                 <div className="flex justify-between items-center mb-2">
                   <span className="text-sm font-medium text-gray-600">Retail ISO Rate</span>
-                  <span className="text-lg font-bold text-red-600">$0.50</span>
+                  <span className="text-lg font-bold text-red-600">Higher</span>
                 </div>
                 <div className="h-8 bg-red-100 rounded-lg overflow-hidden">
                   <motion.div
@@ -102,14 +102,14 @@ export default function PortfolioAdvantage() {
                     className="h-full bg-red-500 rounded-lg"
                   />
                 </div>
-                <p className="text-xs text-gray-500 mt-1">You keep: $2.50 (of $3.00)</p>
+                <p className="text-xs text-gray-500 mt-1">Typical retail processing fees</p>
               </div>
 
               {/* Wholesale Tier */}
               <div className="mb-6">
                 <div className="flex justify-between items-center mb-2">
                   <span className="text-sm font-medium text-gray-600">CashReady Wholesale</span>
-                  <span className="text-lg font-bold text-green-600">$0.20</span>
+                  <span className="text-lg font-bold text-green-600">Lower</span>
                 </div>
                 <div className="h-8 bg-green-100 rounded-lg overflow-hidden">
                   <motion.div
@@ -120,14 +120,14 @@ export default function PortfolioAdvantage() {
                     className="h-full bg-green-500 rounded-lg"
                   />
                 </div>
-                <p className="text-xs text-gray-500 mt-1">You keep: $2.80 (of $3.00)</p>
+                <p className="text-xs text-gray-500 mt-1">Our wholesale institutional rates</p>
               </div>
 
               {/* Difference Highlight */}
               <div className="bg-green-50 rounded-xl p-4 border border-green-200">
                 <div className="flex items-center justify-between">
                   <span className="text-sm font-medium text-green-800">Your Additional Revenue</span>
-                  <span className="text-2xl font-bold text-green-600">+$0.30</span>
+                  <span className="text-2xl font-bold text-green-600">Significant Savings</span>
                 </div>
                 <p className="text-xs text-green-700 mt-1">
                   Per transaction • Scales with volume
