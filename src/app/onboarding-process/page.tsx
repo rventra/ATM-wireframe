@@ -58,7 +58,7 @@ export default function OnboardingProcessPage() {
       <Navigation />
       <main>
         {/* Hero */}
-        <section className="gradient-navy py-20 lg:py-28">
+        <section className="gradient-navy py-16 lg:py-20">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h1 className="heading-lg text-white mb-6">
               Get Started in 3 Simple Steps
@@ -121,8 +121,8 @@ export default function OnboardingProcessPage() {
         {/* Timeline */}
         <section className="py-12 lg:py-16 bg-gray-50">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <h2 className="heading-md text-gray-900 mb-3">Your Path to Lower Rates</h2>
+            <div className="text-center mb-8">
+              <h2 className="heading-md text-gray-900 mb-2">Your Path to Lower Rates</h2>
               <p className="text-gray-600">From signing to savings in as little as two weeks</p>
             </div>
 
@@ -135,11 +135,11 @@ export default function OnboardingProcessPage() {
               <div className="grid grid-cols-5 gap-4">
                 {timeline.map((item, index) => (
                   <div key={item.day} className="text-center">
-                    <div className="w-12 h-12 rounded-full bg-green-600 text-white font-bold text-sm flex items-center justify-center mx-auto mb-3 shadow-lg">
+                    <div className="w-10 h-10 rounded-full bg-green-600 text-white font-bold text-sm flex items-center justify-center mx-auto mb-2 shadow-lg">
                       {index + 1}
                     </div>
-                    <div className="text-sm font-bold text-gray-900 mb-1">{item.day}</div>
-                    <div className="text-xs font-medium text-green-600 mb-1">{item.label}</div>
+                    <div className="text-sm font-bold text-gray-900 mb-0.5">{item.day}</div>
+                    <div className="text-xs font-medium text-green-600 mb-0.5">{item.label}</div>
                     <div className="text-xs text-gray-500">{item.description}</div>
                   </div>
                 ))}
@@ -147,8 +147,8 @@ export default function OnboardingProcessPage() {
             </div>
 
             {/* Promise statement */}
-            <div className="mt-12 text-center">
-              <div className="inline-flex items-center gap-3 bg-white rounded-xl px-6 py-4 border border-gray-200 shadow-sm">
+            <div className="mt-8 text-center">
+              <div className="inline-flex items-center gap-3 bg-white rounded-xl px-5 py-3 border border-gray-200 shadow-sm">
                 <div className="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center">
                   <Zap className="w-5 h-5 text-green-600" />
                 </div>
@@ -162,14 +162,14 @@ export default function OnboardingProcessPage() {
         </section>
 
         {/* What's Included */}
-        <section className="section-padding bg-white">
+        <section className="py-12 lg:py-16 bg-white">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-10">
-              <h2 className="heading-md text-gray-900 mb-3">What You Get</h2>
+            <div className="text-center mb-8">
+              <h2 className="heading-md text-gray-900 mb-2">What You Get</h2>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-6">
-              <div className="flex items-start gap-4 p-6 bg-gray-50 rounded-xl">
+            <div className="grid md:grid-cols-2 gap-4">
+              <div className="flex items-start gap-4 p-5 bg-gray-50 rounded-xl">
                 <div className="w-12 h-12 rounded-lg bg-green-100 flex items-center justify-center flex-shrink-0">
                   <Users className="w-6 h-6 text-green-600" />
                 </div>
@@ -179,9 +179,9 @@ export default function OnboardingProcessPage() {
                 </div>
               </div>
 
-              <div className="flex items-start gap-4 p-6 bg-gray-50 rounded-xl">
-                <div className="w-12 h-12 rounded-lg bg-green-100 flex items-center justify-center flex-shrink-0">
-                  <Settings className="w-6 h-6 text-green-600" />
+              <div className="flex items-start gap-4 p-5 bg-gray-50 rounded-xl">
+                <div className="w-10 h-10 rounded-lg bg-green-100 flex items-center justify-center flex-shrink-0">
+                  <Settings className="w-5 h-5 text-green-600" />
                 </div>
                 <div>
                   <h3 className="font-semibold text-gray-900 mb-1">Full Technical Setup</h3>
@@ -189,9 +189,9 @@ export default function OnboardingProcessPage() {
                 </div>
               </div>
 
-              <div className="flex items-start gap-4 p-6 bg-gray-50 rounded-xl">
-                <div className="w-12 h-12 rounded-lg bg-green-100 flex items-center justify-center flex-shrink-0">
-                  <Clock className="w-6 h-6 text-green-600" />
+              <div className="flex items-start gap-4 p-5 bg-gray-50 rounded-xl">
+                <div className="w-10 h-10 rounded-lg bg-green-100 flex items-center justify-center flex-shrink-0">
+                  <Clock className="w-5 h-5 text-green-600" />
                 </div>
                 <div>
                   <h3 className="font-semibold text-gray-900 mb-1">Fast Transition</h3>
@@ -199,9 +199,9 @@ export default function OnboardingProcessPage() {
                 </div>
               </div>
 
-              <div className="flex items-start gap-4 p-6 bg-gray-50 rounded-xl">
-                <div className="w-12 h-12 rounded-lg bg-green-100 flex items-center justify-center flex-shrink-0">
-                  <Check className="w-6 h-6 text-green-600" />
+              <div className="flex items-start gap-4 p-5 bg-gray-50 rounded-xl">
+                <div className="w-10 h-10 rounded-lg bg-green-100 flex items-center justify-center flex-shrink-0">
+                  <Check className="w-5 h-5 text-green-600" />
                 </div>
                 <div>
                   <h3 className="font-semibold text-gray-900 mb-1">Better Rates</h3>
@@ -213,10 +213,10 @@ export default function OnboardingProcessPage() {
         </section>
 
         {/* CTA */}
-        <section className="gradient-navy py-16">
+        <section className="gradient-navy py-12">
           <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-2xl font-bold text-white mb-4">Ready to get started?</h2>
-            <p className="text-gray-300 mb-8">
+            <h2 className="text-2xl font-bold text-white mb-3">Ready to get started?</h2>
+            <p className="text-gray-300 mb-6">
               Mike O'Grady will personally handle your onboarding.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
