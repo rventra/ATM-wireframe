@@ -74,7 +74,7 @@ export default function OnboardingProcessPage() {
         </section>
 
         {/* Steps */}
-        <section className="section-padding bg-white">
+        <section className="py-12 lg:py-16 bg-white">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid md:grid-cols-3 gap-8">
               {steps.map((step, index) => (
@@ -119,7 +119,7 @@ export default function OnboardingProcessPage() {
         </section>
 
         {/* Timeline */}
-        <section className="section-padding bg-gray-50">
+        <section className="py-12 lg:py-16 bg-gray-50">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <h2 className="heading-md text-gray-900 mb-3">Your Path to Lower Rates</h2>
